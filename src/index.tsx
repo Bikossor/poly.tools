@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { Home, About, HttpStatus404 } from './pages';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, NavLink, Switch, Route } from 'react-router-dom';
+
+const Home = React.lazy(() => import('./pages/Home'));
+const About = React.lazy(() => import('./pages/About'));
+const HttpStatus404 = React.lazy(() => import('./pages/HttpStatus404'));
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,17 +24,13 @@ ReactDOM.render(
             <NavLink to='/error'>Error</NavLink>
           </li>
         </ul>
-        <Switch>
-          <Route exact path='/'>
-            <Home />
-          </Route>
-          <Route path='/about'>
-            <About />
-          </Route>
-          <Route path='*'>
-            <HttpStatus404 />
-          </Route>
-        </Switch>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Switch>
+            <Route exact path='/' component={Home}/>
+            <Route path='/about' component={About}/>
+            <Route path='*' component={HttpStatus404}/>
+          </Switch>
+        </Suspense>
       </div>
     </BrowserRouter>
   </React.StrictMode>,
