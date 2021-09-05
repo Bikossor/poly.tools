@@ -18,7 +18,7 @@ ReactDOM.render(
       <AppBar position='fixed' style={{ zIndex: 10000 }}>
         <Toolbar>
           <Typography variant='h6' noWrap>
-            Clipped drawer
+            {'poly.tools'}
           </Typography>
         </Toolbar>
       </AppBar>
