@@ -43,9 +43,6 @@ export default function ClippedDrawer() {
           <ListItem component={NavLink} to="/about" button>
             <ListItemText primary="About" />
           </ListItem>
-          <ListItem component={NavLink} to="/error" button>
-            <ListItemText primary="Error" />
-          </ListItem>
         </List>
       </div>
     </Drawer>
