@@ -6,6 +6,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import ClippedDrawer from './ClippedDrawer';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
+import "./index.css";
 
 const Home = React.lazy(() => import('./pages/Home'));
 const About = React.lazy(() => import('./pages/About'));
@@ -22,23 +23,17 @@ ReactDOM.render(
           </Typography>
         </Toolbar>
       </AppBar>
-      <div
-        style={{
-          position: 'relative',
-          top: '64px',
-          left: '240px',
-          display: 'flex',
-          flexDirection: 'column',
-        }}
-      >
+      <div className="content">
         <ClippedDrawer />
-        <Suspense fallback={<div>Loading...</div>}>
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route path='/about' component={About} />
-            <Route path='*' component={HttpStatus404} />
-          </Switch>
-        </Suspense>
+        <main>
+          <Suspense fallback={<div>Loading...</div>}>
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route path='/about' component={About} />
+              <Route path='*' component={HttpStatus404} />
+            </Switch>
+          </Suspense>
+        </main>
       </div>
     </BrowserRouter>
   </React.StrictMode>,

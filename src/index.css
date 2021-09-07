@@ -1,0 +1,22 @@
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    height: inherit;
+}
+
+main {
+    flex: 1;
+    overflow-x: auto;
+}
+
+.content {
+    position: relative;
+    top: 64px;
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: calc(100vh - 64px);
+}
