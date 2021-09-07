@@ -20,6 +20,12 @@ const useStyles = makeStyles(() =>
     drawerContainer: {
       overflow: "auto",
     },
+    activeMenuItem: {
+      borderRight: "5px solid #3f51b5",
+      "&:hover": {
+        borderRight: "5px solid #3f51b5",
+      },
+    },
   })
 );
 
@@ -37,10 +43,10 @@ export default function ClippedDrawer() {
       <Toolbar />
       <div className={classes.drawerContainer}>
         <List>
-          <ListItem component={NavLink} to="/" button>
+          <ListItem component={NavLink} to="/" activeClassName={classes.activeMenuItem} exact button>
             <ListItemText primary="Home" />
           </ListItem>
-          <ListItem component={NavLink} to="/about" button>
+          <ListItem component={NavLink} to="/about" activeClassName={classes.activeMenuItem} exact button>
             <ListItemText primary="About" />
           </ListItem>
         </List>
