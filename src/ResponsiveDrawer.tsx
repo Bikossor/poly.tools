@@ -15,6 +15,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/styles';
+import { NavLink } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -50,6 +51,12 @@ const useStyles = makeStyles((theme: Theme) =>
       flexGrow: 1,
       padding: theme.spacing(3),
     },
+    activeMenuItem: {
+      borderRight: "5px solid #3f51b5",
+      "&:hover": {
+        borderRight: "5px solid #3f51b5",
+      },
+    },
   }),
 );
 
@@ -68,23 +75,15 @@ const ResponsiveDrawer: FC<DrawerProps> = (props) => {
     <div>
       <div className={classes.toolbar} />
       <Divider />
-      <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
+        <List>
+          <ListItem component={NavLink} to="/" activeClassName={classes.activeMenuItem} exact button>
+            <ListItemText primary="Home" />
           </ListItem>
-        ))}
-      </List>
+          <ListItem component={NavLink} to="/about" activeClassName={classes.activeMenuItem} exact button>
+            <ListItemText primary="About" />
+          </ListItem>
+        </List>
       <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
     </div>
   );
 
