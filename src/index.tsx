@@ -5,7 +5,6 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import ResponsiveDrawer from './ResponsiveDrawer';
-import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import "./index.css";
 
 const Home = React.lazy(() => import('./pages/Home'));
@@ -16,13 +15,6 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <CssBaseline />
-      <AppBar position='fixed' style={{ zIndex: 10000 }}>
-        <Toolbar>
-          <Typography variant='h6' noWrap>
-            {'poly.tools'}
-          </Typography>
-        </Toolbar>
-      </AppBar>
       <ResponsiveDrawer>
         <Suspense fallback={<div>Loading...</div>}>
           <Switch>
