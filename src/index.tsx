@@ -4,7 +4,7 @@ import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import ClippedDrawer from './ClippedDrawer';
+import ResponsiveDrawer from './ResponsiveDrawer';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import "./index.css";
 
@@ -23,18 +23,15 @@ ReactDOM.render(
           </Typography>
         </Toolbar>
       </AppBar>
-      <div className="content">
-        <ClippedDrawer />
-        <main>
-          <Suspense fallback={<div>Loading...</div>}>
-            <Switch>
-              <Route exact path='/' component={Home} />
-              <Route path='/about' component={About} />
-              <Route path='*' component={HttpStatus404} />
-            </Switch>
-          </Suspense>
-        </main>
-      </div>
+      <ResponsiveDrawer>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route path='/about' component={About} />
+            <Route path='*' component={HttpStatus404} />
+          </Switch>
+        </Suspense>
+      </ResponsiveDrawer>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
