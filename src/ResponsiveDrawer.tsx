@@ -84,6 +84,11 @@ const ResponsiveDrawer: FC<DrawerProps> = (props) => {
           </ListItem>
         </List>
       <Divider />
+      <List>
+        <ListItem component={NavLink} to="/pixel-density-calculator" activeClassName={classes.activeMenuItem} exact button>
+          <ListItemText primary="Pixel density calculator" />
+        </ListItem>
+      </List>
     </div>
   );
 
