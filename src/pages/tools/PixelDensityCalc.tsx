@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const calcPixelDensity = (
   resHorizontal: number,
   resVertical: number,
-  diagonal: number
+  diagonal: number,
 ) => {
   return (
     Math.sqrt(Math.pow(resHorizontal, 2) + Math.pow(resVertical, 2)) / diagonal
@@ -17,7 +17,7 @@ export const PixelDensityCalc = () => {
   const [diagonal, setDiagonal] = useState(24);
 
   const [pixelDensity, setPixelDensity] = useState(
-    calcPixelDensity(resHorizontal, resVertical, diagonal)
+    calcPixelDensity(resHorizontal, resVertical, diagonal),
   );
 
   useEffect(() => {
@@ -34,23 +34,21 @@ export const PixelDensityCalc = () => {
           value={resHorizontal}
           type="number"
           inputMode="numeric"
-          onChange={(event) =>
-            setResHorizontal(parseInt(event.target.value, 10))
-          }
+          onChange={event => setResHorizontal(parseInt(event.target.value, 10))}
         />
         <TextField
           label="Resolution vertical"
           value={resVertical}
           type="number"
           inputMode="numeric"
-          onChange={(event) => setResVertical(parseInt(event.target.value, 10))}
+          onChange={event => setResVertical(parseInt(event.target.value, 10))}
         />
         <TextField
           label="Diagonal"
           value={diagonal}
           type="number"
           inputMode="decimal"
-          onChange={(event) => setDiagonal(parseFloat(event.target.value))}
+          onChange={event => setDiagonal(parseFloat(event.target.value))}
         />
         <TextField
           variant="filled"
