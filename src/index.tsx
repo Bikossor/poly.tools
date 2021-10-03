@@ -1,16 +1,16 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
-import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
-import reportWebVitals from "./reportWebVitals";
+import * as serviceWorkerRegistration from "serviceWorkerRegistration";
+import reportWebVitals from "reportWebVitals";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import ResponsiveDrawer from "./components/ResponsiveDrawer";
-import { PixelDensityCalc } from "./pages/tools/PixelDensityCalc";
-import "./index.css";
+import ResponsiveDrawer from "components/ResponsiveDrawer";
+import { PixelDensityCalc } from "pages/tools/PixelDensityCalc";
+import "index.css";
 
-const Home = React.lazy(() => import("./pages/Home"));
-const About = React.lazy(() => import("./pages/About"));
-const HttpStatus404 = React.lazy(() => import("./pages/HttpStatus404"));
+const Home = React.lazy(() => import("pages/Home"));
+const About = React.lazy(() => import("pages/About"));
+const HttpStatus404 = React.lazy(() => import("pages/HttpStatus404"));
 
 ReactDOM.render(
   <React.StrictMode>
