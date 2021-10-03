@@ -4,7 +4,7 @@ import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import ResponsiveDrawer from "./ResponsiveDrawer";
+import ResponsiveDrawer from "./components/ResponsiveDrawer";
 import { PixelDensityCalc } from "./pages/tools/PixelDensityCalc";
 import "./index.css";
 
