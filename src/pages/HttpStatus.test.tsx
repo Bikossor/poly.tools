@@ -1,6 +1,6 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import HttpStatus404 from "./HttpStatus404";
+import HttpStatus404 from "pages/HttpStatus404";
 
 test("renders HttpStatus404", () => {
   render(<HttpStatus404 />);
