@@ -1,4 +1,4 @@
-import { Input } from "@chakra-ui/react";
+import { Heading, Input } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 const calcPixelDensity = (
@@ -26,7 +26,7 @@ export const DisplayCalculator = () => {
 
   return (
     <>
-      <h1>Display Calculator</h1>
+      <Heading as={"h1"}>Display Calculator</Heading>
 
       <div style={{ display: "grid", rowGap: "2rem" }}>
         <Input
