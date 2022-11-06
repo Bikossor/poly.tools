@@ -1,12 +1,14 @@
 import {
-  Button,
   Drawer,
   DrawerBody,
   DrawerContent,
   DrawerHeader,
   DrawerOverlay,
+  Flex,
+  Link,
 } from "@chakra-ui/react";
 import { useMenuDrawerStore } from "../Stores";
+import { NavLink } from "react-router-dom";
 
 export const MenuDrawer = () => {
   const { close, isOpen } = useMenuDrawerStore(state => ({
@@ -19,7 +21,16 @@ export const MenuDrawer = () => {
       <DrawerOverlay />
       <DrawerContent>
         <DrawerHeader borderBottomWidth="1px">{"poly.tools"}</DrawerHeader>
-        <DrawerBody>{"Drawer content"}</DrawerBody>
+        <DrawerBody>
+          <Flex direction={"column"}>
+            <Link as={NavLink} to={"/"}>
+              Home
+            </Link>
+            <Link as={NavLink} to={"/about"}>
+              About
+            </Link>
+          </Flex>
+        </DrawerBody>
       </DrawerContent>
     </Drawer>
   );
