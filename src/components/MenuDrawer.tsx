@@ -45,6 +45,9 @@ export const MenuDrawer = () => {
             <Link as={NavLink} to={"/tools/display-calculator"}>
               Display Calculator
             </Link>
+            <Link as={NavLink} to={"/tools/sort-lines"}>
+              Sort Lines
+            </Link>
           </Flex>
         </DrawerBody>
         <DrawerFooter>
