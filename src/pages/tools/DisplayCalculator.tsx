@@ -1,4 +1,4 @@
-import { TextField } from "@material-ui/core";
+import { Input } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 const calcPixelDensity = (
@@ -11,7 +11,7 @@ const calcPixelDensity = (
   );
 };
 
-export const PixelDensityCalc = () => {
+export const DisplayCalculator = () => {
   const [resHorizontal, setResHorizontal] = useState(1920);
   const [resVertical, setResVertical] = useState(1080);
   const [diagonal, setDiagonal] = useState(24);
@@ -26,39 +26,32 @@ export const PixelDensityCalc = () => {
 
   return (
     <>
-      <h1>Pixel density calculator</h1>
+      <h1>Display Calculator</h1>
 
       <div style={{ display: "grid", rowGap: "2rem" }}>
-        <TextField
-          label="Resolution horizontal"
+        <Input
           value={resHorizontal}
           type="number"
           inputMode="numeric"
           onChange={event => setResHorizontal(parseInt(event.target.value, 10))}
         />
-        <TextField
-          label="Resolution vertical"
+        <Input
           value={resVertical}
           type="number"
           inputMode="numeric"
           onChange={event => setResVertical(parseInt(event.target.value, 10))}
         />
-        <TextField
-          label="Diagonal"
+        <Input
           value={diagonal}
           type="number"
           inputMode="decimal"
           onChange={event => setDiagonal(parseFloat(event.target.value))}
         />
-        <TextField
+        <Input
           variant="filled"
-          label="Pixel density"
           type="number"
           inputMode="decimal"
           value={pixelDensity.toFixed(3)}
-          InputProps={{
-            readOnly: true,
-          }}
         />
       </div>
     </>
