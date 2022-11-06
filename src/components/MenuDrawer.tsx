@@ -29,6 +29,9 @@ export const MenuDrawer = () => {
             <Link as={NavLink} to={"/about"}>
               About
             </Link>
+            <Link as={NavLink} to={"/tools/display-calculator"}>
+              Display Calculator
+            </Link>
           </Flex>
         </DrawerBody>
       </DrawerContent>
