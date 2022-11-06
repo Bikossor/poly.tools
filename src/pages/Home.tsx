@@ -1,3 +1,5 @@
+import { Heading } from "@chakra-ui/react";
+
 export const Home = () => {
-  return <h1>Home</h1>;
+  return <Heading as={"h1"}>Home</Heading>;
 };
