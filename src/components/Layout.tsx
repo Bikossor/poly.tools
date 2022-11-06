@@ -9,15 +9,19 @@ export const Layout = () => {
 
   return (
     <div style={{ height: "100vh" }}>
-      <Button onClick={openMenuDrawer}>
+      <Button
+        onClick={openMenuDrawer}
+        style={{ position: "fixed", left: "1rem", top: "1rem" }}
+      >
         <HamburgerIcon />
       </Button>
       <MenuDrawer />
       <main
         style={{
-          paddingInline: "1rem",
+          paddingInline: "5rem",
           maxWidth: "40rem",
           marginInline: "auto",
+          marginBlock: "4rem",
         }}
       >
         <Outlet />
