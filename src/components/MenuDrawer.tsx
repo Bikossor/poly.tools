@@ -48,6 +48,9 @@ export const MenuDrawer = () => {
             <Link as={NavLink} to={"/tools/sort-lines"}>
               Sort Lines
             </Link>
+            <Link as={NavLink} to={"/tools/date"}>
+              Date Tools
+            </Link>
           </Flex>
         </DrawerBody>
         <DrawerFooter>

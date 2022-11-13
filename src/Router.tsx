@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { About } from "./pages/About";
 import { Home } from "./pages/Home";
+import { DateTools } from "./pages/tools/Date";
 import { DisplayCalculator } from "./pages/tools/DisplayCalculator";
 import { SortLines } from "./pages/tools/SortLines";
 
@@ -28,6 +29,10 @@ export const Router = createBrowserRouter([
           {
             path: "sort-lines",
             element: <SortLines />,
+          },
+          {
+            path: "date",
+            element: <DateTools />,
           },
         ],
       },
