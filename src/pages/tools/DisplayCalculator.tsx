@@ -1,4 +1,11 @@
-import { Heading, Input, InputGroup, Text } from "@chakra-ui/react";
+import {
+  Button,
+  Heading,
+  Input,
+  InputGroup,
+  InputRightElement,
+  Text,
+} from "@chakra-ui/react";
 import { ReactNode, useEffect, useState } from "react";
 
 const calcPixelDensity = (
@@ -20,6 +27,8 @@ const InputGroupColumn = ({ children }: WithChildren) => (
 const TextSpan = ({ children }: WithChildren) => (
   <Text as={"span"}>{children}</Text>
 );
+
+const handleCopyClick = (data: string) => navigator.clipboard.writeText(data);
 
 export const DisplayCalculator = () => {
   const [resHorizontal, setResHorizontal] = useState(1920);
@@ -77,6 +86,11 @@ export const DisplayCalculator = () => {
             value={pixelDensity.toFixed(3)}
             readOnly
           />
+          <InputRightElement>
+            <Button onClick={() => handleCopyClick(pixelDensity.toFixed(3))}>
+              Copy
+            </Button>
+          </InputRightElement>
         </InputGroupColumn>
       </div>
     </>
