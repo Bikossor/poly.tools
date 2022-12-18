@@ -51,6 +51,9 @@ export const MenuDrawer = () => {
             <Link as={NavLink} to={"/tools/date"}>
               Date Tools
             </Link>
+            <Link as={NavLink} to={"/tools/circular-area"}>
+              Circular Area
+            </Link>
           </Flex>
         </DrawerBody>
         <DrawerFooter>
