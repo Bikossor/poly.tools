@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { About } from "./pages/About";
 import { Home } from "./pages/Home";
+import { CircularArea } from "./pages/tools/CircularArea";
 import { DateTools } from "./pages/tools/Date";
 import { DisplayCalculator } from "./pages/tools/DisplayCalculator";
 import { SortLines } from "./pages/tools/SortLines";
@@ -33,6 +34,10 @@ export const Router = createBrowserRouter([
           {
             path: "date",
             element: <DateTools />,
+          },
+          {
+            path: "circular-area",
+            element: <CircularArea />,
           },
         ],
       },
