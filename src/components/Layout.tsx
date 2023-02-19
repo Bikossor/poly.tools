@@ -1,5 +1,5 @@
 import { HamburgerIcon } from "@chakra-ui/icons";
-import { Button, Container, VStack } from "@chakra-ui/react";
+import { Button, Container, IconButton, VStack } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
 import { useMenuDrawerStore } from "../Stores";
 import { MenuDrawer } from "./MenuDrawer";
@@ -16,9 +16,12 @@ export const Layout = () => {
           height={16}
           position={"relative"}
         >
-          <Button onClick={openMenuDrawer}>
-            <HamburgerIcon />
-          </Button>
+          <IconButton
+            icon={<HamburgerIcon />}
+            title="Open menu"
+            aria-label="Open menu"
+            onClick={openMenuDrawer}
+          />
         </Container>
         <Container>
           <Outlet />
