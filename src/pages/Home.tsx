@@ -16,7 +16,7 @@ export const Home = () => {
           About
         </Heading>
         <Text>
-          <Code background={"teal.200"}>poly.tools</Code> is a webapp made by{" "}
+          <Code colorScheme={"teal"}>poly.tools</Code> is a webapp made by{" "}
           <Link href="https://alichtenthaeler.de/" target={"_blank"}>
             André Lichtenthäler (@Bikossor)
           </Link>{" "}
@@ -28,8 +28,8 @@ export const Home = () => {
         Tech Stack
       </Heading>
       <Text>
-        <Code background={"teal.200"}>poly.tools</Code> is build with the
-        following technologies:
+        <Code colorScheme={"teal"}>poly.tools</Code> is build with the following
+        technologies:
       </Text>
       <UnorderedList>
         <ListItem>
