@@ -13,6 +13,9 @@ export const Home = () => {
     <>
       <Box pb={8}>
         <Heading as={"h1"} pb={4}>
+          poly.tools
+        </Heading>
+        <Heading as={"h2"} pb={4}>
           About
         </Heading>
         <Text>
