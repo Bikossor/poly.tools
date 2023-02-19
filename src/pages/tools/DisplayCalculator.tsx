@@ -1,10 +1,14 @@
 import {
   Button,
+  Container,
   Heading,
+  HStack,
   Input,
   InputGroup,
   InputRightElement,
+  Tag,
   Text,
+  VStack,
 } from "@chakra-ui/react";
 import { ReactNode, useEffect, useState } from "react";
 
@@ -17,6 +21,45 @@ const calcPixelDensity = (
     Math.sqrt(Math.pow(resHorizontal, 2) + Math.pow(resVertical, 2)) / diagonal
   );
 };
+
+type ResolutionPreset = {
+  readonly label: string;
+  readonly horizontal: number;
+  readonly vertical: number;
+};
+
+const resolutionPresets: ReadonlyArray<ResolutionPreset> = [
+  {
+    label: "720p",
+    horizontal: 1280,
+    vertical: 720,
+  },
+  {
+    label: "900p",
+    horizontal: 1600,
+    vertical: 900,
+  },
+  {
+    label: "1080p",
+    horizontal: 1920,
+    vertical: 1080,
+  },
+  {
+    label: "1440p",
+    horizontal: 2560,
+    vertical: 1440,
+  },
+  {
+    label: "2160p",
+    horizontal: 3840,
+    vertical: 2160,
+  },
+  {
+    label: "2880p",
+    horizontal: 5120,
+    vertical: 2880,
+  },
+];
 
 type WithChildren = { children: ReactNode };
 
@@ -68,6 +111,32 @@ export const DisplayCalculator = () => {
             onChange={event => setResVertical(parseInt(event.target.value, 10))}
           />
         </InputGroupColumn>
+        <VStack align={"start"}>
+          <Text>Resolution presets</Text>
+          <HStack>
+            <Container>
+              {resolutionPresets.map(preset => (
+                <Tag
+                  onClick={() => {
+                    setResHorizontal(preset.horizontal);
+                    setResVertical(preset.vertical);
+                  }}
+                  variant={"outline"}
+                  colorScheme={
+                    resHorizontal === preset.horizontal &&
+                    resVertical === preset.vertical
+                      ? "green"
+                      : "gray"
+                  }
+                  style={{ cursor: "pointer" }}
+                  size={"lg"}
+                >
+                  {preset.label}
+                </Tag>
+              ))}
+            </Container>
+          </HStack>
+        </VStack>
         <InputGroupColumn>
           <TextSpan children={"Diagonal"} />
           <Input
