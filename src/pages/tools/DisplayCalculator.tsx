@@ -1,8 +1,9 @@
+import { CopyIcon } from "@chakra-ui/icons";
 import {
-  Button,
   Container,
   Heading,
   HStack,
+  IconButton,
   Input,
   InputGroup,
   InputRightElement,
@@ -156,9 +157,12 @@ export const DisplayCalculator = () => {
             readOnly
           />
           <InputRightElement>
-            <Button onClick={() => handleCopyClick(pixelDensity.toFixed(3))}>
-              Copy
-            </Button>
+            <IconButton
+              icon={<CopyIcon />}
+              title="Copy"
+              aria-label="Copy"
+              onClick={() => handleCopyClick(pixelDensity.toFixed(3))}
+            />
           </InputRightElement>
         </InputGroupColumn>
       </div>
