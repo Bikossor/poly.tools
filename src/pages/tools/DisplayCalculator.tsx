@@ -115,7 +115,7 @@ export const DisplayCalculator = () => {
           </InputGroup>
         </VStack>
         <VStack align={"start"}>
-          <Text>Resolution presets</Text>
+          <TextSpan children={"Resolution presets"} />
           <HStack>
             <Container>
               {resolutionPresets.map(preset => (
@@ -152,7 +152,7 @@ export const DisplayCalculator = () => {
           </InputGroup>
         </VStack>
         <VStack align={"start"}>
-          <Text children={"Pixel density"} />
+          <TextSpan children={"Pixel density"} />
           <InputGroup>
             <Input
               variant="filled"
