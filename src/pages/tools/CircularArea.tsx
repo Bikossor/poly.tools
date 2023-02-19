@@ -1,11 +1,12 @@
 import {
-  Button,
   Heading,
+  IconButton,
   Input,
   InputGroup,
   InputLeftAddon,
   InputRightElement,
 } from "@chakra-ui/react";
+import { CopyIcon } from "@chakra-ui/icons";
 import { ChangeEvent, useEffect, useState } from "react";
 
 const calcCircularArea = (diameter: number) => {
@@ -35,14 +36,24 @@ export const CircularArea = () => {
           <InputLeftAddon children={"Diameter"} />
           <Input value={diameter ?? 0} onChange={handleDiameterChange} />
           <InputRightElement>
-            <Button onClick={() => {}}>Copy</Button>
+            <IconButton
+              icon={<CopyIcon />}
+              title="Copy"
+              aria-label="Copy"
+              onClick={() => {}}
+            />
           </InputRightElement>
         </InputGroup>
         <InputGroup>
           <InputLeftAddon children={"Circular area"} />
           <Input value={circularArea} readOnly />
           <InputRightElement>
-            <Button onClick={() => copyValue(circularArea)}>Copy</Button>
+            <IconButton
+              icon={<CopyIcon />}
+              title="Copy"
+              aria-label="Copy"
+              onClick={() => copyValue(circularArea)}
+            />
           </InputRightElement>
         </InputGroup>
       </div>

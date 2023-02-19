@@ -1,6 +1,7 @@
+import { CopyIcon } from "@chakra-ui/icons";
 import {
-  Button,
   Heading,
+  IconButton,
   Input,
   InputGroup,
   InputLeftAddon,
@@ -45,7 +46,12 @@ export const DateTools = () => {
           <InputLeftAddon children={"Calendar week"} />
           <Input defaultValue={calendarWeek} />
           <InputRightElement>
-            <Button onClick={copyCalendarWeek}>Copy</Button>
+            <IconButton
+              icon={<CopyIcon />}
+              title="Copy"
+              aria-label="Copy"
+              onClick={copyCalendarWeek}
+            />
           </InputRightElement>
         </InputGroup>
         <InputGroup>
