@@ -64,10 +64,6 @@ const resolutionPresets: ReadonlyArray<ResolutionPreset> = [
 
 type WithChildren = { children: ReactNode };
 
-const InputGroupColumn = ({ children }: WithChildren) => (
-  <InputGroup flexDirection={"column"}>{children}</InputGroup>
-);
-
 const TextSpan = ({ children }: WithChildren) => (
   <Text as={"span"}>{children}</Text>
 );
@@ -92,28 +88,34 @@ export const DisplayCalculator = () => {
       <Heading as={"h1"}>Display Calculator</Heading>
 
       <div style={{ display: "grid", rowGap: "2rem" }}>
-        <InputGroupColumn>
-          <TextSpan children={"Horizontal resolution"} />
-          <Input
-            value={resHorizontal}
-            type="number"
-            inputMode="numeric"
-            onChange={event =>
-              setResHorizontal(parseInt(event.target.value, 10))
-            }
-          />
-        </InputGroupColumn>
-        <InputGroupColumn>
-          <TextSpan children={"Vertical resolution"} />
-          <Input
-            value={resVertical}
-            type="number"
-            inputMode="numeric"
-            onChange={event => setResVertical(parseInt(event.target.value, 10))}
-          />
-        </InputGroupColumn>
         <VStack align={"start"}>
-          <Text>Resolution presets</Text>
+          <TextSpan children={"Horizontal resolution"} />
+          <InputGroup>
+            <Input
+              value={resHorizontal}
+              type="number"
+              inputMode="numeric"
+              onChange={event =>
+                setResHorizontal(parseInt(event.target.value, 10))
+              }
+            />
+          </InputGroup>
+        </VStack>
+        <VStack align={"start"}>
+          <TextSpan children={"Vertical resolution"} />
+          <InputGroup>
+            <Input
+              value={resVertical}
+              type="number"
+              inputMode="numeric"
+              onChange={event =>
+                setResVertical(parseInt(event.target.value, 10))
+              }
+            />
+          </InputGroup>
+        </VStack>
+        <VStack align={"start"}>
+          <TextSpan children={"Resolution presets"} />
           <HStack>
             <Container>
               {resolutionPresets.map(preset => (
@@ -138,33 +140,37 @@ export const DisplayCalculator = () => {
             </Container>
           </HStack>
         </VStack>
-        <InputGroupColumn>
+        <VStack align={"start"}>
           <TextSpan children={"Diagonal"} />
-          <Input
-            value={diagonal}
-            type="number"
-            inputMode="decimal"
-            onChange={event => setDiagonal(parseFloat(event.target.value))}
-          />
-        </InputGroupColumn>
-        <InputGroupColumn>
-          <TextSpan children={"Pixel density"} />
-          <Input
-            variant="filled"
-            type="number"
-            inputMode="decimal"
-            value={pixelDensity.toFixed(3)}
-            readOnly
-          />
-          <InputRightElement>
-            <IconButton
-              icon={<CopyIcon />}
-              title="Copy"
-              aria-label="Copy"
-              onClick={() => handleCopyClick(pixelDensity.toFixed(3))}
+          <InputGroup>
+            <Input
+              value={diagonal}
+              type="number"
+              inputMode="decimal"
+              onChange={event => setDiagonal(parseFloat(event.target.value))}
             />
-          </InputRightElement>
-        </InputGroupColumn>
+          </InputGroup>
+        </VStack>
+        <VStack align={"start"}>
+          <TextSpan children={"Pixel density"} />
+          <InputGroup>
+            <Input
+              variant="filled"
+              type="number"
+              inputMode="decimal"
+              value={pixelDensity.toFixed(3)}
+              readOnly
+            />
+            <InputRightElement>
+              <IconButton
+                icon={<CopyIcon />}
+                title="Copy"
+                aria-label="Copy"
+                onClick={() => handleCopyClick(pixelDensity.toFixed(3))}
+              />
+            </InputRightElement>
+          </InputGroup>
+        </VStack>
       </div>
     </>
   );
