@@ -1,4 +1,4 @@
-import { CopyIcon } from "@chakra-ui/icons";
+import { CheckIcon, CopyIcon } from "@chakra-ui/icons";
 import {
   Heading,
   IconButton,
@@ -6,6 +6,7 @@ import {
   InputGroup,
   InputLeftAddon,
   InputRightElement,
+  useClipboard,
 } from "@chakra-ui/react";
 
 const getWeekNumber = (date: Date): number => {
@@ -27,16 +28,18 @@ const leapYear = (year: number): boolean =>
 
 export const DateTools = () => {
   const today = new Date();
-  const calendarWeek = getWeekNumber(today);
+  const { hasCopied, onCopy, value } = useClipboard(
+    getWeekNumber(today).toString(),
+  );
   const thisYear = today.getUTCFullYear();
-
-  const copyCalendarWeek = () =>
-    navigator.clipboard.writeText(calendarWeek.toString());
 
   const leapYearString = (year: number) =>
     leapYear(year)
       ? `${thisYear} is a leap year`
       : `${thisYear} is not a leap year`;
+
+  const copyIcon = hasCopied ? <CheckIcon /> : <CopyIcon />;
+  const copyText = hasCopied ? "Value copied!" : "Copy value";
 
   return (
     <>
@@ -44,13 +47,14 @@ export const DateTools = () => {
       <div style={{ display: "grid", rowGap: "2rem" }}>
         <InputGroup>
           <InputLeftAddon children={"Calendar week"} />
-          <Input defaultValue={calendarWeek} />
+          <Input defaultValue={value} />
           <InputRightElement>
             <IconButton
-              icon={<CopyIcon />}
-              title="Copy"
-              aria-label="Copy"
-              onClick={copyCalendarWeek}
+              icon={copyIcon}
+              title={copyText}
+              aria-label={copyText}
+              onClick={onCopy}
+              colorScheme={hasCopied ? "green" : "gray"}
             />
           </InputRightElement>
         </InputGroup>
