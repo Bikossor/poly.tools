@@ -35,14 +35,6 @@ export const CircularArea = () => {
         <InputGroup>
           <InputLeftAddon children={"Diameter"} />
           <Input value={diameter ?? 0} onChange={handleDiameterChange} />
-          <InputRightElement>
-            <IconButton
-              icon={<CopyIcon />}
-              title="Copy"
-              aria-label="Copy"
-              onClick={() => {}}
-            />
-          </InputRightElement>
         </InputGroup>
         <InputGroup>
           <InputLeftAddon children={"Circular area"} />
