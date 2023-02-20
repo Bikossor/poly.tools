@@ -3,9 +3,10 @@ import {
   IconButton,
   Input,
   InputGroup,
-  InputLeftAddon,
   InputRightElement,
+  Text,
   useClipboard,
+  VStack,
 } from "@chakra-ui/react";
 import { CheckIcon, CopyIcon } from "@chakra-ui/icons";
 import { ChangeEvent, useEffect, useState } from "react";
@@ -32,23 +33,27 @@ export const CircularArea = () => {
     <>
       <Heading as={"h1"}>Circular area</Heading>
       <div style={{ display: "grid", rowGap: "2rem" }}>
-        <InputGroup>
-          <InputLeftAddon children={"Diameter"} />
-          <Input value={diameter ?? 0} onChange={handleDiameterChange} />
-        </InputGroup>
-        <InputGroup>
-          <InputLeftAddon children={"Circular area"} />
-          <Input value={value} readOnly />
-          <InputRightElement>
-            <IconButton
-              icon={copyIcon}
-              title={copyText}
-              aria-label={copyText}
-              onClick={onCopy}
-              colorScheme={hasCopied ? "green" : "gray"}
-            />
-          </InputRightElement>
-        </InputGroup>
+        <VStack align="start">
+          <Text as="span">Diameter</Text>
+          <InputGroup>
+            <Input value={diameter ?? 0} onChange={handleDiameterChange} />
+          </InputGroup>
+        </VStack>
+        <VStack align="start">
+          <Text as="span">Circular area</Text>
+          <InputGroup>
+            <Input value={value} readOnly />
+            <InputRightElement>
+              <IconButton
+                icon={copyIcon}
+                title={copyText}
+                aria-label={copyText}
+                onClick={onCopy}
+                colorScheme={hasCopied ? "green" : "gray"}
+              />
+            </InputRightElement>
+          </InputGroup>
+        </VStack>
       </div>
     </>
   );
