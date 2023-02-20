@@ -5,28 +5,28 @@ import {
   InputGroup,
   InputLeftAddon,
   InputRightElement,
+  useClipboard,
 } from "@chakra-ui/react";
-import { CopyIcon } from "@chakra-ui/icons";
+import { CheckIcon, CopyIcon } from "@chakra-ui/icons";
 import { ChangeEvent, useEffect, useState } from "react";
 
 const calcCircularArea = (diameter: number) => {
   return (Math.PI * diameter ** 2) / 4;
 };
 
-const copyValue = (value: string) => {
-  navigator.clipboard.writeText(value);
-};
-
 export const CircularArea = () => {
   const [diameter, setDiameter] = useState<number>();
-  const [circularArea, setCircularArea] = useState("");
+  const { hasCopied, onCopy, setValue, value } = useClipboard("");
 
   const handleDiameterChange = (event: ChangeEvent<HTMLInputElement>) =>
     setDiameter(parseFloat(event.target.value));
 
   useEffect(() => {
-    setCircularArea(calcCircularArea(diameter ?? 0).toFixed(3));
+    setValue(calcCircularArea(diameter ?? 0).toFixed(3));
   }, [diameter]);
+
+  const copyIcon = hasCopied ? <CheckIcon /> : <CopyIcon />;
+  const copyText = hasCopied ? "Value copied!" : "Copy value";
 
   return (
     <>
@@ -35,24 +35,17 @@ export const CircularArea = () => {
         <InputGroup>
           <InputLeftAddon children={"Diameter"} />
           <Input value={diameter ?? 0} onChange={handleDiameterChange} />
-          <InputRightElement>
-            <IconButton
-              icon={<CopyIcon />}
-              title="Copy"
-              aria-label="Copy"
-              onClick={() => {}}
-            />
-          </InputRightElement>
         </InputGroup>
         <InputGroup>
           <InputLeftAddon children={"Circular area"} />
-          <Input value={circularArea} readOnly />
+          <Input value={value} readOnly />
           <InputRightElement>
             <IconButton
-              icon={<CopyIcon />}
-              title="Copy"
-              aria-label="Copy"
-              onClick={() => copyValue(circularArea)}
+              icon={copyIcon}
+              title={copyText}
+              aria-label={copyText}
+              onClick={onCopy}
+              colorScheme={hasCopied ? "green" : "gray"}
             />
           </InputRightElement>
         </InputGroup>

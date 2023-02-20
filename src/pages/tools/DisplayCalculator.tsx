@@ -1,4 +1,4 @@
-import { CopyIcon } from "@chakra-ui/icons";
+import { CheckIcon, CopyIcon } from "@chakra-ui/icons";
 import {
   Container,
   Heading,
@@ -9,6 +9,7 @@ import {
   InputRightElement,
   Tag,
   Text,
+  useClipboard,
   VStack,
 } from "@chakra-ui/react";
 import { ReactNode, useEffect, useState } from "react";
@@ -68,20 +69,21 @@ const TextSpan = ({ children }: WithChildren) => (
   <Text as={"span"}>{children}</Text>
 );
 
-const handleCopyClick = (data: string) => navigator.clipboard.writeText(data);
-
 export const DisplayCalculator = () => {
   const [resHorizontal, setResHorizontal] = useState(1920);
   const [resVertical, setResVertical] = useState(1080);
   const [diagonal, setDiagonal] = useState(24);
 
-  const [pixelDensity, setPixelDensity] = useState(
-    calcPixelDensity(resHorizontal, resVertical, diagonal),
+  const { hasCopied, onCopy, setValue, value } = useClipboard(
+    calcPixelDensity(resHorizontal, resVertical, diagonal).toFixed(3),
   );
 
   useEffect(() => {
-    setPixelDensity(calcPixelDensity(resHorizontal, resVertical, diagonal));
+    setValue(calcPixelDensity(resHorizontal, resVertical, diagonal).toFixed(3));
   }, [resHorizontal, resVertical, diagonal]);
+
+  const copyIcon = hasCopied ? <CheckIcon /> : <CopyIcon />;
+  const copyText = hasCopied ? "Value copied!" : "Copy value";
 
   return (
     <>
@@ -158,15 +160,16 @@ export const DisplayCalculator = () => {
               variant="filled"
               type="number"
               inputMode="decimal"
-              value={pixelDensity.toFixed(3)}
+              value={value}
               readOnly
             />
             <InputRightElement>
               <IconButton
-                icon={<CopyIcon />}
-                title="Copy"
-                aria-label="Copy"
-                onClick={() => handleCopyClick(pixelDensity.toFixed(3))}
+                icon={copyIcon}
+                title={copyText}
+                aria-label={copyText}
+                onClick={onCopy}
+                colorScheme={hasCopied ? "green" : "gray"}
               />
             </InputRightElement>
           </InputGroup>
