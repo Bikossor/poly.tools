@@ -7,7 +7,13 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     react(),
     VitePWA({
-      registerType: "autoUpdate",
+      registerType: "prompt",
+      injectRegister: "auto",
+      strategies: "generateSW",
+      workbox: {
+        globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
+        cleanupOutdatedCaches: false,
+      },
     }),
   ],
   server: {
