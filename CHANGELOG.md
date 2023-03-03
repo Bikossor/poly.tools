@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/Bikossor/poly.tools/compare/v1.2.0...v1.3.0) (2023-03-03)
+
+
+### Features
+
+* replace tags with buttons ([#72](https://github.com/Bikossor/poly.tools/issues/72)) ([841dd1c](https://github.com/Bikossor/poly.tools/commit/841dd1c173eab52fe3b84132bf257587abf22bda)), closes [#71](https://github.com/Bikossor/poly.tools/issues/71)
+
 # [1.2.0](https://github.com/Bikossor/poly.tools/compare/v1.1.0...v1.2.0) (2023-03-03)
 
 
