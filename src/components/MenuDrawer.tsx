@@ -9,10 +9,13 @@ import {
   Link,
   useColorMode,
   IconButton,
+  Text,
+  Code,
 } from "@chakra-ui/react";
 import { useMenuDrawerStore } from "../Stores";
 import { NavLink } from "react-router-dom";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
+import { version } from "../../package.json";
 
 const getColorModeIcon = (isDarkMode: boolean) =>
   isDarkMode ? <SunIcon /> : <MoonIcon />;
@@ -33,7 +36,14 @@ export const MenuDrawer = () => {
     <Drawer placement={"left"} onClose={close} isOpen={isOpen}>
       <DrawerOverlay />
       <DrawerContent>
-        <DrawerHeader borderBottomWidth="1px">{"poly.tools"}</DrawerHeader>
+        <DrawerHeader
+          display="flex"
+          alignItems="center"
+          borderBottomWidth="1px"
+        >
+          <Text flex={1}>{"poly.tools"}</Text>
+          <Code colorScheme="teal">{`v${version}`}</Code>
+        </DrawerHeader>
         <DrawerBody>
           <Flex direction={"column"}>
             <Link as={NavLink} to={"/"}>
