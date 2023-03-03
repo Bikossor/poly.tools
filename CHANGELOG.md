@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/Bikossor/poly.tools/compare/v1.0.0...v1.1.0) (2023-03-03)
+
+
+### Features
+
+* show app version in menu ([#68](https://github.com/Bikossor/poly.tools/issues/68)) ([cee295a](https://github.com/Bikossor/poly.tools/commit/cee295a97f0d4dd13a70d480cf07e66d551c86aa)), closes [#67](https://github.com/Bikossor/poly.tools/issues/67)
+
 # 1.0.0 (2023-03-03)
 
 
