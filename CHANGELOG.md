@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/Bikossor/poly.tools/compare/v1.1.0...v1.2.0) (2023-03-03)
+
+
+### Features
+
+* add github repo and changelog links ([#70](https://github.com/Bikossor/poly.tools/issues/70)) ([5c1cde5](https://github.com/Bikossor/poly.tools/commit/5c1cde53742130b85abf0e91e654e02b79d4a9fd)), closes [#69](https://github.com/Bikossor/poly.tools/issues/69)
+
 # [1.1.0](https://github.com/Bikossor/poly.tools/compare/v1.0.0...v1.1.0) (2023-03-03)
 
 
