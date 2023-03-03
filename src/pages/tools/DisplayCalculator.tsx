@@ -1,13 +1,12 @@
 import { CheckIcon, CopyIcon } from "@chakra-ui/icons";
 import {
-  Container,
+  Button,
+  ButtonGroup,
   Heading,
-  HStack,
   IconButton,
   Input,
   InputGroup,
   InputRightElement,
-  Tag,
   Text,
   useClipboard,
   VStack,
@@ -118,29 +117,27 @@ export const DisplayCalculator = () => {
         </VStack>
         <VStack align={"start"}>
           <TextSpan children={"Resolution presets"} />
-          <HStack>
-            <Container>
-              {resolutionPresets.map(preset => (
-                <Tag
-                  onClick={() => {
-                    setResHorizontal(preset.horizontal);
-                    setResVertical(preset.vertical);
-                  }}
-                  variant={"outline"}
-                  colorScheme={
-                    resHorizontal === preset.horizontal &&
-                    resVertical === preset.vertical
-                      ? "green"
-                      : "gray"
-                  }
-                  style={{ cursor: "pointer" }}
-                  size={"lg"}
-                >
-                  {preset.label}
-                </Tag>
-              ))}
-            </Container>
-          </HStack>
+          <ButtonGroup width="100%" isAttached>
+            {resolutionPresets.map(preset => (
+              <Button
+                flex={1}
+                onClick={() => {
+                  setResHorizontal(preset.horizontal);
+                  setResVertical(preset.vertical);
+                }}
+                variant={"outline"}
+                colorScheme={
+                  resHorizontal === preset.horizontal &&
+                  resVertical === preset.vertical
+                    ? "green"
+                    : "gray"
+                }
+                style={{ cursor: "pointer" }}
+              >
+                {preset.label}
+              </Button>
+            ))}
+          </ButtonGroup>
         </VStack>
         <VStack align={"start"}>
           <TextSpan children={"Diagonal"} />
