@@ -45,7 +45,7 @@ export const MenuDrawer = () => {
           <Code colorScheme="teal">{`v${version}`}</Code>
         </DrawerHeader>
         <DrawerBody>
-          <Flex direction={"column"}>
+          <Flex borderBottomWidth="1px" direction={"column"}>
             <Link as={NavLink} to={"/"}>
               Home
             </Link>
@@ -60,6 +60,22 @@ export const MenuDrawer = () => {
             </Link>
             <Link as={NavLink} to={"/tools/circular-area"}>
               Circular Area
+            </Link>
+          </Flex>
+          <Flex direction={"column"}>
+            <Link
+              href={"https://github.com/Bikossor/poly.tools"}
+              target="_blank"
+            >
+              GitHub Repo
+            </Link>
+            <Link
+              href={
+                "https://github.com/Bikossor/poly.tools/blob/main/CHANGELOG.md"
+              }
+              target="_blank"
+            >
+              Changelog
             </Link>
           </Flex>
         </DrawerBody>
