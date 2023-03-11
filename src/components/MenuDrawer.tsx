@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import { useMenuDrawerStore } from "../Stores";
 import { NavLink } from "react-router-dom";
-import { SunIcon, MoonIcon } from "@chakra-ui/icons";
+import { SunIcon, MoonIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import { version } from "../../package.json";
 
 const getColorModeIcon = (isDarkMode: boolean) =>
@@ -63,19 +63,16 @@ export const MenuDrawer = () => {
             </Link>
           </Flex>
           <Flex direction={"column"}>
-            <Link
-              href={"https://github.com/Bikossor/poly.tools"}
-              target="_blank"
-            >
-              GitHub Repo
+            <Link href={"https://github.com/Bikossor/poly.tools"} isExternal>
+              GitHub Repo <ExternalLinkIcon mx="2px" />
             </Link>
             <Link
               href={
                 "https://github.com/Bikossor/poly.tools/blob/main/CHANGELOG.md"
               }
-              target="_blank"
+              isExternal
             >
-              Changelog
+              Changelog <ExternalLinkIcon mx="2px" />
             </Link>
           </Flex>
         </DrawerBody>
