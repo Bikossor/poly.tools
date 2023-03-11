@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/Bikossor/poly.tools/compare/v1.3.0...v1.4.0) (2023-03-11)
+
+
+### Features
+
+* mark external links ([#74](https://github.com/Bikossor/poly.tools/issues/74)) ([4c63250](https://github.com/Bikossor/poly.tools/commit/4c63250510d5c51572a1b69fc4c29dd4c23e8de5)), closes [#73](https://github.com/Bikossor/poly.tools/issues/73)
+
 # [1.3.0](https://github.com/Bikossor/poly.tools/compare/v1.2.0...v1.3.0) (2023-03-03)
 
 
