@@ -1,3 +1,4 @@
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 import {
   Box,
   Code,
@@ -20,8 +21,8 @@ export const Home = () => {
         </Heading>
         <Text>
           <Code colorScheme={"teal"}>poly.tools</Code> is a webapp made by{" "}
-          <Link href="https://alichtenthaeler.de/" target={"_blank"}>
-            André Lichtenthäler (@Bikossor)
+          <Link href="https://alichtenthaeler.de/" isExternal>
+            André Lichtenthäler (@Bikossor) <ExternalLinkIcon mx="2px" />
           </Link>{" "}
           for all the small tools you could need. It's modern, free of charge
           and free of advertising.
@@ -36,33 +37,33 @@ export const Home = () => {
       </Text>
       <UnorderedList>
         <ListItem>
-          <Link href="https://chakra-ui.com/" target={"_blank"}>
-            Chakra UI
+          <Link href="https://chakra-ui.com/" isExternal>
+            Chakra UI <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
         <ListItem>
-          <Link href="https://reactjs.org/" target={"_blank"}>
-            React
+          <Link href="https://reactjs.org/" isExternal>
+            React <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
         <ListItem>
-          <Link href="https://reactrouter.com/" target={"_blank"}>
-            React Router
+          <Link href="https://reactrouter.com/" isExternal>
+            React Router <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
         <ListItem>
-          <Link href="https://www.typescriptlang.org/" target={"_blank"}>
-            TypeScript
+          <Link href="https://www.typescriptlang.org/" isExternal>
+            TypeScript <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
         <ListItem>
-          <Link href="https://vitejs.dev/" target={"_blank"}>
-            Vite
+          <Link href="https://vitejs.dev/" isExternal>
+            Vite <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
         <ListItem>
-          <Link href="https://zustand-demo.pmnd.rs/" target={"_blank"}>
-            Zustand
+          <Link href="https://zustand-demo.pmnd.rs/" isExternal>
+            Zustand <ExternalLinkIcon mx="2px" />
           </Link>
         </ListItem>
       </UnorderedList>
