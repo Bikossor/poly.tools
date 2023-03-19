@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/Bikossor/poly.tools/compare/v1.4.0...v1.5.0) (2023-03-19)
+
+
+### Features
+
+* **DisplayCalculator:** add compare list ([#76](https://github.com/Bikossor/poly.tools/issues/76)) ([ddc7da3](https://github.com/Bikossor/poly.tools/commit/ddc7da3196cc8089136a14d49b7d328e118e345f)), closes [#75](https://github.com/Bikossor/poly.tools/issues/75)
+
 # [1.4.0](https://github.com/Bikossor/poly.tools/compare/v1.3.0...v1.4.0) (2023-03-11)
 
 
