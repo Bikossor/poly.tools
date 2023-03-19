@@ -1,3 +1,10 @@
+## [1.5.1](https://github.com/Bikossor/poly.tools/compare/v1.5.0...v1.5.1) (2023-03-19)
+
+
+### Bug Fixes
+
+* **DisplayCalculator:** improve resolution presets to wrap again ([#78](https://github.com/Bikossor/poly.tools/issues/78)) ([5e139af](https://github.com/Bikossor/poly.tools/commit/5e139afe196244ba15efd890c8bb82eda0929e80)), closes [#77](https://github.com/Bikossor/poly.tools/issues/77)
+
 # [1.5.0](https://github.com/Bikossor/poly.tools/compare/v1.4.0...v1.5.0) (2023-03-19)
 
 
