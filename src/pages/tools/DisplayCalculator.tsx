@@ -2,6 +2,7 @@ import { CheckIcon, CopyIcon } from "@chakra-ui/icons";
 import {
   Button,
   ButtonGroup,
+  Flex,
   Grid,
   GridItem,
   Heading,
@@ -134,7 +135,7 @@ export const DisplayCalculator = () => {
         </VStack>
         <VStack align={"start"}>
           <TextSpan children={"Resolution presets"} />
-          <ButtonGroup width="100%" isAttached>
+          <Flex width="100%" flexWrap="wrap" gap={2}>
             {resolutionPresets.map(preset => (
               <Button
                 flex={1}
@@ -150,11 +151,12 @@ export const DisplayCalculator = () => {
                     : "gray"
                 }
                 style={{ cursor: "pointer" }}
+                minW={16}
               >
                 {preset.label}
               </Button>
             ))}
-          </ButtonGroup>
+          </Flex>
         </VStack>
         <VStack align={"start"}>
           <TextSpan children={"Diagonal"} />
