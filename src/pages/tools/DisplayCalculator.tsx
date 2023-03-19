@@ -2,6 +2,8 @@ import { CheckIcon, CopyIcon } from "@chakra-ui/icons";
 import {
   Button,
   ButtonGroup,
+  Grid,
+  GridItem,
   Heading,
   IconButton,
   Input,
@@ -68,10 +70,18 @@ const TextSpan = ({ children }: WithChildren) => (
   <Text as={"span"}>{children}</Text>
 );
 
+type CompareListItem = {
+  width: number;
+  height: number;
+  diagonal: number;
+  ppi: string;
+};
+
 export const DisplayCalculator = () => {
   const [resHorizontal, setResHorizontal] = useState(1920);
   const [resVertical, setResVertical] = useState(1080);
   const [diagonal, setDiagonal] = useState(24);
+  const [compareList, setCompareList] = useState<Array<CompareListItem>>([]);
 
   const { hasCopied, onCopy, setValue, value } = useClipboard(
     calcPixelDensity(resHorizontal, resVertical, diagonal).toFixed(3),
@@ -83,6 +93,13 @@ export const DisplayCalculator = () => {
 
   const copyIcon = hasCopied ? <CheckIcon /> : <CopyIcon />;
   const copyText = hasCopied ? "Value copied!" : "Copy value";
+
+  const addToCompare = () => {
+    setCompareList(prevList => [
+      ...prevList,
+      { diagonal, height: resVertical, width: resHorizontal, ppi: value },
+    ]);
+  };
 
   return (
     <>
@@ -170,6 +187,35 @@ export const DisplayCalculator = () => {
               />
             </InputRightElement>
           </InputGroup>
+        </VStack>
+        <Button onClick={() => addToCompare()} colorScheme="green">
+          Add to compare list
+        </Button>
+        <Button
+          onClick={() => setCompareList([])}
+          colorScheme="red"
+          variant={"outline"}
+        >
+          Clear compare list
+        </Button>
+
+        <VStack align={"start"}>
+          {compareList.length > 0 && <Heading as={"h2"}>Compare list</Heading>}
+          <VStack width="100%">
+            {compareList.map(({ diagonal, height, ppi, width }) => (
+              <Grid
+                width="100%"
+                templateColumns="1fr 1fr 1fr 2fr"
+                columnGap={2}
+                alignItems="center"
+              >
+                <GridItem textAlign={"end"}>{width}</GridItem>
+                <GridItem textAlign={"end"}>{height}</GridItem>
+                <GridItem textAlign={"end"}>{`${diagonal}"`}</GridItem>
+                <GridItem textAlign={"end"}>{`${ppi} PPI`}</GridItem>
+              </Grid>
+            ))}
+          </VStack>
         </VStack>
       </div>
     </>
