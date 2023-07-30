@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/Bikossor/poly.tools/compare/v1.5.1...v1.6.0) (2023-07-30)
+
+
+### Features
+
+* **raid-calculator:** introduce RAID calculator ([#82](https://github.com/Bikossor/poly.tools/issues/82)) ([82e6786](https://github.com/Bikossor/poly.tools/commit/82e678687fe207e3701f04a4cb87dad85966b11b)), closes [#81](https://github.com/Bikossor/poly.tools/issues/81)
+
 ## [1.5.1](https://github.com/Bikossor/poly.tools/compare/v1.5.0...v1.5.1) (2023-03-19)
 
 
