@@ -61,6 +61,9 @@ export const MenuDrawer = () => {
             <Link as={NavLink} to={"/tools/circular-area"}>
               Circular Area
             </Link>
+            <Link as={NavLink} to={"/tools/raid-calculator"}>
+              RAID Calculator
+            </Link>
           </Flex>
           <Flex direction={"column"}>
             <Link href={"https://github.com/Bikossor/poly.tools"} isExternal>

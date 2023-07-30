@@ -5,6 +5,7 @@ import { CircularArea } from "./pages/tools/CircularArea";
 import { DateTools } from "./pages/tools/Date";
 import { DisplayCalculator } from "./pages/tools/DisplayCalculator";
 import { SortLines } from "./pages/tools/SortLines";
+import { RAIDCalculator } from "./pages/tools/RAIDCalculator";
 
 export const Router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ export const Router = createBrowserRouter([
           {
             path: "circular-area",
             element: <CircularArea />,
+          },
+          {
+            path: "raid-calculator",
+            element: <RAIDCalculator />,
           },
         ],
       },
