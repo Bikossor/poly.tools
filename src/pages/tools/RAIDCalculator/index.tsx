@@ -25,6 +25,7 @@ const initialState: RAIDCalculatorState = {
   hasMinNumberOfDisks: true,
   netCapacity: 14,
   reliability: 1,
+  efficiency: 0.5,
 };
 
 export const RAIDCalculator = () => {
@@ -103,6 +104,15 @@ export const RAIDCalculator = () => {
               <TextSpan children={"Net capacity:"} />
               <TextSpan>
                 {state.netCapacity.toFixed(2)} {state.diskSizeUnit}
+              </TextSpan>
+            </HStack>
+            <HStack>
+              <TextSpan children={"Space efficiency:"} />
+              <TextSpan>
+                {state.efficiency.toLocaleString(undefined, {
+                  style: "percent",
+                  minimumFractionDigits: 2,
+                })}
               </TextSpan>
             </HStack>
             <HStack>
