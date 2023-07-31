@@ -8,6 +8,7 @@ export type RAIDCalculatorState = {
   readonly hasMinNumberOfDisks: boolean;
   readonly netCapacity: number;
   readonly reliability: number;
+  readonly efficiency: number;
 };
 
 export type RAIDCalculatorAction =

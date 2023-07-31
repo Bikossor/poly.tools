@@ -51,3 +51,20 @@ export const calculateReliability = (
       return 2;
   }
 };
+
+export const calculateEfficiency = (
+  raidLevel: RAIDLevel,
+  numberOfDisks: number,
+) => {
+  switch (raidLevel) {
+    case "RAID0":
+      return 1;
+    case "RAID1":
+      return 0.5;
+    case "RAID2":
+    case "RAID5":
+      return (numberOfDisks - 1) / numberOfDisks;
+    case "RAID6":
+      return (numberOfDisks - 2) / numberOfDisks;
+  }
+};

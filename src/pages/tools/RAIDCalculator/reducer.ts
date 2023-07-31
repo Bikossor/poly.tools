@@ -3,6 +3,7 @@ import {
   calculateNetCapacity,
   getHasMinNumberOfDisks,
   calculateReliability,
+  calculateEfficiency,
 } from "./utils";
 
 export const RAIDCalculatorReducer = (
@@ -19,6 +20,7 @@ export const RAIDCalculatorReducer = (
           action.payload,
           state.numberOfDisks,
         ),
+        efficiency: calculateEfficiency(state.raidLevel, state.numberOfDisks),
       };
     case "SET_DISK_SIZE_UNIT":
       return { ...state, diskSizeUnit: action.payload };
@@ -36,6 +38,7 @@ export const RAIDCalculatorReducer = (
           action.payload,
         ),
         reliability: calculateReliability(state.raidLevel, action.payload),
+        efficiency: calculateEfficiency(state.raidLevel, action.payload),
       };
     case "SET_RAID_LEVEL":
       return {
@@ -51,6 +54,7 @@ export const RAIDCalculatorReducer = (
           state.numberOfDisks,
         ),
         reliability: calculateReliability(action.payload, state.numberOfDisks),
+        efficiency: calculateEfficiency(action.payload, state.numberOfDisks),
       };
     default:
       return state;
