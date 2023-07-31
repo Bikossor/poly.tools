@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/Bikossor/poly.tools/compare/v1.6.0...v1.7.0) (2023-07-31)
+
+
+### Features
+
+* **raid-calculator:** add space efficiency ([#84](https://github.com/Bikossor/poly.tools/issues/84)) ([0bbe152](https://github.com/Bikossor/poly.tools/commit/0bbe15200405016c2eef46b5df30e1a2c5d7c9ff)), closes [#83](https://github.com/Bikossor/poly.tools/issues/83)
+
 # [1.6.0](https://github.com/Bikossor/poly.tools/compare/v1.5.1...v1.6.0) (2023-07-30)
 
 
