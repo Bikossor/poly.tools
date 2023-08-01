@@ -1,7 +1,6 @@
 import { CheckIcon, CopyIcon } from "@chakra-ui/icons";
 import {
   Button,
-  ButtonGroup,
   Flex,
   Grid,
   GridItem,
@@ -14,56 +13,10 @@ import {
   useClipboard,
   VStack,
 } from "@chakra-ui/react";
-import { ReactNode, useEffect, useState } from "react";
-
-const calcPixelDensity = (
-  resHorizontal: number,
-  resVertical: number,
-  diagonal: number,
-) => {
-  return (
-    Math.sqrt(Math.pow(resHorizontal, 2) + Math.pow(resVertical, 2)) / diagonal
-  );
-};
-
-type ResolutionPreset = {
-  readonly label: string;
-  readonly horizontal: number;
-  readonly vertical: number;
-};
-
-const resolutionPresets: ReadonlyArray<ResolutionPreset> = [
-  {
-    label: "720p",
-    horizontal: 1280,
-    vertical: 720,
-  },
-  {
-    label: "900p",
-    horizontal: 1600,
-    vertical: 900,
-  },
-  {
-    label: "1080p",
-    horizontal: 1920,
-    vertical: 1080,
-  },
-  {
-    label: "1440p",
-    horizontal: 2560,
-    vertical: 1440,
-  },
-  {
-    label: "2160p",
-    horizontal: 3840,
-    vertical: 2160,
-  },
-  {
-    label: "2880p",
-    horizontal: 5120,
-    vertical: 2880,
-  },
-];
+import { ReactNode, useEffect, useReducer, useState } from "react";
+import { resolutionPresets } from "./presets";
+import { CompareListItem, DisplayCalculatorState } from "./types";
+import { DisplayCalculatorReducer } from "./reducer";
 
 type WithChildren = { children: ReactNode };
 
@@ -71,34 +24,39 @@ const TextSpan = ({ children }: WithChildren) => (
   <Text as={"span"}>{children}</Text>
 );
 
-type CompareListItem = {
-  width: number;
-  height: number;
-  diagonal: number;
-  ppi: string;
+const initialState: DisplayCalculatorState = {
+  horizontalResolution: 1920,
+  verticalResolution: 1080,
+  diagonal: 24,
+  pixelDensity: 91.788,
 };
 
 export const DisplayCalculator = () => {
-  const [resHorizontal, setResHorizontal] = useState(1920);
-  const [resVertical, setResVertical] = useState(1080);
-  const [diagonal, setDiagonal] = useState(24);
+  const [state, dispatch] = useReducer(DisplayCalculatorReducer, initialState);
   const [compareList, setCompareList] = useState<Array<CompareListItem>>([]);
 
   const { hasCopied, onCopy, setValue, value } = useClipboard(
-    calcPixelDensity(resHorizontal, resVertical, diagonal).toFixed(3),
+    state.pixelDensity.toFixed(3),
   );
 
   useEffect(() => {
-    setValue(calcPixelDensity(resHorizontal, resVertical, diagonal).toFixed(3));
-  }, [resHorizontal, resVertical, diagonal]);
+    setValue(state.pixelDensity.toFixed(3));
+  }, [state.pixelDensity, setValue]);
 
   const copyIcon = hasCopied ? <CheckIcon /> : <CopyIcon />;
   const copyText = hasCopied ? "Value copied!" : "Copy value";
 
   const addToCompare = () => {
+    const { diagonal, horizontalResolution, pixelDensity, verticalResolution } =
+      state;
     setCompareList(prevList => [
       ...prevList,
-      { diagonal, height: resVertical, width: resHorizontal, ppi: value },
+      {
+        diagonal,
+        verticalResolution,
+        horizontalResolution,
+        pixelDensity,
+      },
     ]);
   };
 
@@ -111,11 +69,14 @@ export const DisplayCalculator = () => {
           <TextSpan children={"Horizontal resolution"} />
           <InputGroup>
             <Input
-              value={resHorizontal}
+              value={state.horizontalResolution}
               type="number"
               inputMode="numeric"
               onChange={event =>
-                setResHorizontal(parseInt(event.target.value, 10))
+                dispatch({
+                  type: "SET_RESOLUTION_HORIZONTAL",
+                  payload: parseInt(event.target.value, 10),
+                })
               }
             />
           </InputGroup>
@@ -124,11 +85,14 @@ export const DisplayCalculator = () => {
           <TextSpan children={"Vertical resolution"} />
           <InputGroup>
             <Input
-              value={resVertical}
+              value={state.verticalResolution}
               type="number"
               inputMode="numeric"
               onChange={event =>
-                setResVertical(parseInt(event.target.value, 10))
+                dispatch({
+                  type: "SET_RESOLUTION_VERTICAL",
+                  payload: parseInt(event.target.value, 10),
+                })
               }
             />
           </InputGroup>
@@ -138,15 +102,21 @@ export const DisplayCalculator = () => {
           <Flex width="100%" flexWrap="wrap" gap={2}>
             {resolutionPresets.map(preset => (
               <Button
+                key={preset.label}
                 flex={1}
-                onClick={() => {
-                  setResHorizontal(preset.horizontal);
-                  setResVertical(preset.vertical);
-                }}
+                onClick={() =>
+                  dispatch({
+                    type: "SET_RESOLUTION_PRESET",
+                    payload: {
+                      horizontal: preset.horizontalResolution,
+                      vertical: preset.verticalResolution,
+                    },
+                  })
+                }
                 variant={"outline"}
                 colorScheme={
-                  resHorizontal === preset.horizontal &&
-                  resVertical === preset.vertical
+                  state.horizontalResolution === preset.horizontalResolution &&
+                  state.verticalResolution === preset.verticalResolution
                     ? "green"
                     : "gray"
                 }
@@ -162,10 +132,15 @@ export const DisplayCalculator = () => {
           <TextSpan children={"Diagonal"} />
           <InputGroup>
             <Input
-              value={diagonal}
+              value={state.diagonal}
               type="number"
               inputMode="decimal"
-              onChange={event => setDiagonal(parseFloat(event.target.value))}
+              onChange={event =>
+                dispatch({
+                  type: "SET_DIAGONAL",
+                  payload: parseFloat(event.target.value),
+                })
+              }
             />
           </InputGroup>
         </VStack>
@@ -176,7 +151,7 @@ export const DisplayCalculator = () => {
               variant="filled"
               type="number"
               inputMode="decimal"
-              value={value}
+              value={state.pixelDensity.toFixed(3)}
               readOnly
             />
             <InputRightElement>
@@ -204,17 +179,25 @@ export const DisplayCalculator = () => {
         <VStack align={"start"}>
           {compareList.length > 0 && <Heading as={"h2"}>Compare list</Heading>}
           <VStack width="100%">
-            {compareList.map(({ diagonal, height, ppi, width }) => (
+            {compareList.map(compareListItem => (
               <Grid
                 width="100%"
                 templateColumns="1fr 1fr 1fr 2fr"
                 columnGap={2}
                 alignItems="center"
               >
-                <GridItem textAlign={"end"}>{width}</GridItem>
-                <GridItem textAlign={"end"}>{height}</GridItem>
-                <GridItem textAlign={"end"}>{`${diagonal}"`}</GridItem>
-                <GridItem textAlign={"end"}>{`${ppi} PPI`}</GridItem>
+                <GridItem textAlign={"end"}>
+                  {compareListItem.horizontalResolution}
+                </GridItem>
+                <GridItem textAlign={"end"}>
+                  {compareListItem.verticalResolution}
+                </GridItem>
+                <GridItem
+                  textAlign={"end"}
+                >{`${compareListItem.diagonal}"`}</GridItem>
+                <GridItem
+                  textAlign={"end"}
+                >{`${compareListItem.pixelDensity.toFixed(3)} PPI`}</GridItem>
               </Grid>
             ))}
           </VStack>
