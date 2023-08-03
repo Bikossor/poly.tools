@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/Bikossor/poly.tools/compare/v1.8.0...v1.9.0) (2023-08-03)
+
+
+### Features
+
+* **general:** code-split tool pages ([#94](https://github.com/Bikossor/poly.tools/issues/94)) ([17d0f0e](https://github.com/Bikossor/poly.tools/commit/17d0f0ef82db333701f8a13bc2a33e670f2630b4)), closes [#93](https://github.com/Bikossor/poly.tools/issues/93) [#93](https://github.com/Bikossor/poly.tools/issues/93) [#93](https://github.com/Bikossor/poly.tools/issues/93) [#93](https://github.com/Bikossor/poly.tools/issues/93)
+
 # [1.8.0](https://github.com/Bikossor/poly.tools/compare/v1.7.0...v1.8.0) (2023-08-03)
 
 
