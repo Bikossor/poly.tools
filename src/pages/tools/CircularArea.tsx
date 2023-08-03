@@ -15,7 +15,7 @@ const calcCircularArea = (diameter: number) => {
   return (Math.PI * diameter ** 2) / 4;
 };
 
-export const CircularArea = () => {
+export default () => {
   const [diameter, setDiameter] = useState<number>();
   const { hasCopied, onCopy, setValue, value } = useClipboard("");
 

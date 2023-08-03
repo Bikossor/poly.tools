@@ -26,7 +26,7 @@ const getWeekNumber = (date: Date): number => {
 const leapYear = (year: number): boolean =>
   new Date(year, 1, 29).getMonth() === 1;
 
-export const DateTools = () => {
+export default () => {
   const today = new Date();
   const { hasCopied, onCopy, value } = useClipboard(
     getWeekNumber(today).toString(),

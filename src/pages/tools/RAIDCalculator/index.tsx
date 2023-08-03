@@ -28,7 +28,7 @@ const initialState: RAIDCalculatorState = {
   efficiency: 0.5,
 };
 
-export const RAIDCalculator = () => {
+export default () => {
   const [state, dispatch] = useReducer(RAIDCalculatorReducer, initialState);
 
   return (
