@@ -3,6 +3,7 @@ import { Button, Container, IconButton, VStack } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
 import { useMenuDrawerStore } from "../Stores";
 import { MenuDrawer } from "./MenuDrawer";
+import { Suspense } from "react";
 
 export const Layout = () => {
   const openMenuDrawer = useMenuDrawerStore(state => state.open);
@@ -24,7 +25,9 @@ export const Layout = () => {
           />
         </Container>
         <Container>
-          <Outlet />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Outlet />
+          </Suspense>
         </Container>
       </VStack>
       <MenuDrawer />
