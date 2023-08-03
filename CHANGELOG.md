@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/Bikossor/poly.tools/compare/v1.7.0...v1.8.0) (2023-08-03)
+
+
+### Features
+
+* **optical-media-speed-calculator:** add Optical Media Speed Calculator ([#92](https://github.com/Bikossor/poly.tools/issues/92)) ([4e3cadc](https://github.com/Bikossor/poly.tools/commit/4e3cadc2832b6220486d8de639e15a0fcef17c82)), closes [#91](https://github.com/Bikossor/poly.tools/issues/91)
+
 # [1.7.0](https://github.com/Bikossor/poly.tools/compare/v1.6.0...v1.7.0) (2023-07-31)
 
 
