@@ -6,6 +6,7 @@ import { DateTools } from "./pages/tools/Date";
 import { DisplayCalculator } from "./pages/tools/DisplayCalculator";
 import { SortLines } from "./pages/tools/SortLines";
 import { RAIDCalculator } from "./pages/tools/RAIDCalculator";
+import { OpticalMediaSpeedCalculator } from "./pages/tools/OpticalMediaSpeedCalculator";
 
 export const Router = createBrowserRouter([
   {
@@ -38,6 +39,10 @@ export const Router = createBrowserRouter([
           {
             path: "raid-calculator",
             element: <RAIDCalculator />,
+          },
+          {
+            path: "optical-media-speed-calculator",
+            element: <OpticalMediaSpeedCalculator />,
           },
         ],
       },
