@@ -1,12 +1,16 @@
+import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import { Layout } from "./components/Layout";
-import { Home } from "./pages/Home";
-import { CircularArea } from "./pages/tools/CircularArea";
-import { DateTools } from "./pages/tools/Date";
-import { DisplayCalculator } from "./pages/tools/DisplayCalculator";
-import { SortLines } from "./pages/tools/SortLines";
-import { RAIDCalculator } from "./pages/tools/RAIDCalculator";
-import { OpticalMediaSpeedCalculator } from "./pages/tools/OpticalMediaSpeedCalculator";
+
+const Home = lazy(() => import("./pages/Home"));
+const CircularArea = lazy(() => import("./pages/tools/CircularArea"));
+const DateTools = lazy(() => import("./pages/tools/Date"));
+const DisplayCalculator = lazy(() => import("./pages/tools/DisplayCalculator"));
+const SortLines = lazy(() => import("./pages/tools/SortLines"));
+const RAIDCalculator = lazy(() => import("./pages/tools/RAIDCalculator"));
+const OpticalMediaSpeedCalculator = lazy(
+  () => import("./pages/tools/OpticalMediaSpeedCalculator"),
+);
 
 export const Router = createBrowserRouter([
   {
