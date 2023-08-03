@@ -24,7 +24,7 @@ const initialState: OpticalMediaSpeedCalculatorState = {
   totalSpeedBytes: 4500,
 };
 
-export const OpticalMediaSpeedCalculator = () => {
+export default () => {
   const [state, dispatch] = useReducer(
     OpticalMediaSpeedCalculatorReducer,
     initialState,

@@ -1,7 +1,7 @@
 import { Button, FormLabel, Heading, Textarea } from "@chakra-ui/react";
 import { useState } from "react";
 
-export const SortLines = () => {
+export default () => {
   const [unsorted, setUnsorted] = useState("");
   const [sorted, setSorted] = useState("");
 

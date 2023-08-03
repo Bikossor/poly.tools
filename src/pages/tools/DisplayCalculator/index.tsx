@@ -31,7 +31,7 @@ const initialState: DisplayCalculatorState = {
   pixelDensity: 91.788,
 };
 
-export const DisplayCalculator = () => {
+export default () => {
   const [state, dispatch] = useReducer(DisplayCalculatorReducer, initialState);
   const [compareList, setCompareList] = useState<Array<CompareListItem>>([]);
 

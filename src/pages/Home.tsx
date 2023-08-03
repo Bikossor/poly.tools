@@ -9,7 +9,7 @@ import {
   UnorderedList,
 } from "@chakra-ui/react";
 
-export const Home = () => {
+export default () => {
   return (
     <>
       <Box pb={8}>
