@@ -1,5 +1,5 @@
 import { HamburgerIcon } from "@chakra-ui/icons";
-import { Button, Container, IconButton, VStack } from "@chakra-ui/react";
+import { Container, IconButton, VStack } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
 import { useMenuDrawerStore } from "../Stores";
 import { MenuDrawer } from "./MenuDrawer";
