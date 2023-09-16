@@ -11,7 +11,7 @@ export default defineConfig(({ mode }) => ({
       injectRegister: "auto",
       strategies: "generateSW",
       workbox: {
-        globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
+        globPatterns: ["**/*.{js,css,html,ico,png,svg,woff,woff2}"],
         cleanupOutdatedCaches: false,
       },
     }),
