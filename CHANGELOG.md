@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/Bikossor/poly.tools/compare/v1.11.1...v1.12.0) (2023-09-16)
+
+
+### Features
+
+* **general:** add font files to pwa precache ([#103](https://github.com/Bikossor/poly.tools/issues/103)) ([12ce896](https://github.com/Bikossor/poly.tools/commit/12ce89662f9a2c6415b72362ba9effccd1accf8f)), closes [#102](https://github.com/Bikossor/poly.tools/issues/102)
+
 ## [1.11.1](https://github.com/Bikossor/poly.tools/compare/v1.11.0...v1.11.1) (2023-09-16)
 
 
