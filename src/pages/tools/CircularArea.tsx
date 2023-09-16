@@ -36,7 +36,12 @@ export default () => {
         <VStack align="start">
           <Text as="span">Diameter</Text>
           <InputGroup>
-            <Input value={diameter ?? 0} onChange={handleDiameterChange} />
+            <Input
+              value={diameter ?? 0}
+              onChange={handleDiameterChange}
+              type="number"
+              min={0}
+            />
           </InputGroup>
         </VStack>
         <VStack align="start">
