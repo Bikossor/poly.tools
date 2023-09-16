@@ -42,6 +42,11 @@ export default () => {
           </Link>
         </ListItem>
         <ListItem>
+          <Link href="https://fontsource.org/" isExternal>
+            Fontsource <ExternalLinkIcon mx="2px" />
+          </Link>
+        </ListItem>
+        <ListItem>
           <Link href="https://reactjs.org/" isExternal>
             React <ExternalLinkIcon mx="2px" />
           </Link>
