@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/Bikossor/poly.tools/compare/v1.9.0...v1.10.0) (2023-09-16)
+
+
+### Features
+
+* **general:** visually improve loading fallback ([#97](https://github.com/Bikossor/poly.tools/issues/97)) ([bcd6af5](https://github.com/Bikossor/poly.tools/commit/bcd6af5e99c8cab3b8f8f08560133c782656a199)), closes [#96](https://github.com/Bikossor/poly.tools/issues/96)
+
 # [1.9.0](https://github.com/Bikossor/poly.tools/compare/v1.8.0...v1.9.0) (2023-08-03)
 
 
