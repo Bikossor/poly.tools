@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/Bikossor/poly.tools/compare/v1.10.0...v1.11.0) (2023-09-16)
+
+
+### Features
+
+* **general:** use Inter font ([#99](https://github.com/Bikossor/poly.tools/issues/99)) ([103dcf8](https://github.com/Bikossor/poly.tools/commit/103dcf8d89686c70451fa866605cd4d1e532c798)), closes [#98](https://github.com/Bikossor/poly.tools/issues/98) [#98](https://github.com/Bikossor/poly.tools/issues/98) [#98](https://github.com/Bikossor/poly.tools/issues/98)
+
 # [1.10.0](https://github.com/Bikossor/poly.tools/compare/v1.9.0...v1.10.0) (2023-09-16)
 
 
