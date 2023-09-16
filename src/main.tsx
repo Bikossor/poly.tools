@@ -4,10 +4,12 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
 import { ReloadPrompt } from "./components/ReloadPrompt";
 import { Router } from "./Router";
+import { CustomTheme } from "./CustomTheme";
+import "@fontsource/inter/latin.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <ChakraProvider>
+    <ChakraProvider theme={CustomTheme}>
       <ColorModeScript type={"localStorage"} />
       <RouterProvider router={Router} />
       <ReloadPrompt />
