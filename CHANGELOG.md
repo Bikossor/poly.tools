@@ -1,3 +1,10 @@
+## [1.11.1](https://github.com/Bikossor/poly.tools/compare/v1.11.0...v1.11.1) (2023-09-16)
+
+
+### Bug Fixes
+
+* **circular-area:** fix diameter input ([#101](https://github.com/Bikossor/poly.tools/issues/101)) ([9d2f983](https://github.com/Bikossor/poly.tools/commit/9d2f983ec25eace1ac3f9394b313d1ce207d29e1)), closes [#100](https://github.com/Bikossor/poly.tools/issues/100)
+
 # [1.11.0](https://github.com/Bikossor/poly.tools/compare/v1.10.0...v1.11.0) (2023-09-16)
 
 
