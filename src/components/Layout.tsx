@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import { useMenuDrawerStore } from "../Stores";
 import { MenuDrawer } from "./MenuDrawer";
 import { Suspense } from "react";
+import { LoadingFallback } from "./LoadingFallback";
 
 export const Layout = () => {
   const openMenuDrawer = useMenuDrawerStore(state => state.open);
@@ -25,7 +26,7 @@ export const Layout = () => {
           />
         </Container>
         <Container>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<LoadingFallback />}>
             <Outlet />
           </Suspense>
         </Container>
