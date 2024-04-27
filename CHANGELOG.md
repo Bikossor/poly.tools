@@ -1,3 +1,10 @@
+## [1.12.1](https://github.com/Bikossor/poly.tools/compare/v1.12.0...v1.12.1) (2024-04-27)
+
+
+### Performance Improvements
+
+* use `manualChunks` to split vendor bundles ([#112](https://github.com/Bikossor/poly.tools/issues/112)) ([540880b](https://github.com/Bikossor/poly.tools/commit/540880be9fe8a689513a7270392a10c10ceab9c6)), closes [#111](https://github.com/Bikossor/poly.tools/issues/111)
+
 # [1.12.0](https://github.com/Bikossor/poly.tools/compare/v1.11.1...v1.12.0) (2023-09-16)
 
 
