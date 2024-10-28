@@ -35,11 +35,17 @@ jobs:
       # Step 5: Push the Docker image to GHCR
       - name: Push Docker image
         run: |
-          docker push ghcr.io/${{ github.repository }}:${{ env.version }}
+          IMAGE_ID=ghcr.io/${{ github.repository }}
+          IMAGE_ID=$(echo $IMAGE_ID | tr '[:upper:]' '[:lower:]')
+
+          docker push $IMAGE_ID:${{ env.version }}
 
       # Optional: Tag latest if pushing from main branch
       - name: Tag as latest (optional)
         if: github.ref == 'refs/heads/main'
         run: |
-          docker tag ghcr.io/${{ github.repository }}:${{ env.version }} ghcr.io/${{ github.repository }}:latest
-          docker push ghcr.io/${{ github.repository }}:latest
+          IMAGE_ID=ghcr.io/${{ github.repository }}
+          IMAGE_ID=$(echo $IMAGE_ID | tr '[:upper:]' '[:lower:]')
+
+          docker tag $IMAGE_ID:${{ env.version }} $IMAGE_ID:latest
+          docker push $IMAGE_ID:latest
