@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/Bikossor/poly.tools/compare/v1.12.1...v1.13.0) (2024-10-28)
+
+
+### Features
+
+* add Dockerfile for containerization ([db87b07](https://github.com/Bikossor/poly.tools/commit/db87b0778e6477cffcb88e63028e479bc9222e8b)), closes [#115](https://github.com/Bikossor/poly.tools/issues/115)
+
 ## [1.12.1](https://github.com/Bikossor/poly.tools/compare/v1.12.0...v1.12.1) (2024-04-27)
 
 
