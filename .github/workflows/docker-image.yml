@@ -6,9 +6,6 @@ on:
       - main
   workflow_dispatch:
 
-env:
-  IMAGE_NAME: poly.tools
-
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
@@ -33,16 +30,16 @@ jobs:
       # Step 4: Build the Docker image
       - name: Build Docker image
         run: |
-          docker build -t ghcr.io/${{ github.repository }}/$IMAGE_NAME:${{ env.version }} .
+          docker build -t ghcr.io/${{ github.repository }}:${{ env.version }} .
 
       # Step 5: Push the Docker image to GHCR
       - name: Push Docker image
         run: |
-          docker push ghcr.io/${{ github.repository }}/$IMAGE_NAME:${{ env.version }}
+          docker push ghcr.io/${{ github.repository }}:${{ env.version }}
 
       # Optional: Tag latest if pushing from main branch
       - name: Tag as latest (optional)
         if: github.ref == 'refs/heads/main'
         run: |
-          docker tag ghcr.io/${{ github.repository }}/$IMAGE_NAME:${{ env.version }} ghcr.io/${{ github.repository }}/$APP_NAME:latest
-          docker push ghcr.io/${{ github.repository }}/$IMAGE_NAME:latest
+          docker tag ghcr.io/${{ github.repository }}:${{ env.version }} ghcr.io/${{ github.repository }}:latest
+          docker push ghcr.io/${{ github.repository }}:latest
