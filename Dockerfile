@@ -18,7 +18,7 @@ RUN npm run build
 
 # -------------------------------------------
 
-FROM caddy:2.4.3-alpine AS prod
+FROM caddy:2.8.4-alpine AS prod
 
 WORKDIR /app
 
