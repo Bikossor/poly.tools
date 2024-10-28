@@ -1,0 +1,48 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+env:
+  IMAGE_NAME: poly.tools
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Extract version from package.json
+      - name: Get version from package.json
+        id: version
+        run: |
+          VERSION=$(jq -r .version package.json)
+          echo "Version from package.json: $VERSION"
+          echo "version=$VERSION" >> $GITHUB_ENV
+
+      # Step 3: Log in to GitHub Container Registry
+      - name: Log in to GitHub Container Registry
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      # Step 4: Build the Docker image
+      - name: Build Docker image
+        run: |
+          docker build -t ghcr.io/${{ github.repository }}/$IMAGE_NAME:${{ env.version }} .
+
+      # Step 5: Push the Docker image to GHCR
+      - name: Push Docker image
+        run: |
+          docker push ghcr.io/${{ github.repository }}/$IMAGE_NAME:${{ env.version }}
+
+      # Optional: Tag latest if pushing from main branch
+      - name: Tag as latest (optional)
+        if: github.ref == 'refs/heads/main'
+        run: |
+          docker tag ghcr.io/${{ github.repository }}/$IMAGE_NAME:${{ env.version }} ghcr.io/${{ github.repository }}/$APP_NAME:latest
+          docker push ghcr.io/${{ github.repository }}/$IMAGE_NAME:latest
