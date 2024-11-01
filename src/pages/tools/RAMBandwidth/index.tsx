@@ -21,7 +21,6 @@ const TextSpan = ({ children }: WithChildren) => (
 
 const initialState: RAMBandwidthState = {
   bandwidth: 19.2,
-  busWidth: 8,
   transferRate: 2400,
 };
 
