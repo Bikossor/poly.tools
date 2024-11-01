@@ -1,3 +1,15 @@
+# [1.14.0](https://github.com/Bikossor/poly.tools/compare/v1.13.0...v1.14.0) (2024-11-01)
+
+
+### Bug Fixes
+
+* remove property busWidth ([e90d1b9](https://github.com/Bikossor/poly.tools/commit/e90d1b95396ea8a1fcd5c2e4bd31d350a1aafb19)), closes [#95](https://github.com/Bikossor/poly.tools/issues/95)
+
+
+### Features
+
+* introduce RAM bandwidth tool ([02d7674](https://github.com/Bikossor/poly.tools/commit/02d7674ff39178693876d0253bd6f9f841e84d26)), closes [#95](https://github.com/Bikossor/poly.tools/issues/95)
+
 # [1.13.0](https://github.com/Bikossor/poly.tools/compare/v1.12.1...v1.13.0) (2024-10-28)
 
 
