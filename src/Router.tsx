@@ -11,6 +11,7 @@ const RAIDCalculator = lazy(() => import("./pages/tools/RAIDCalculator"));
 const OpticalMediaSpeedCalculator = lazy(
   () => import("./pages/tools/OpticalMediaSpeedCalculator"),
 );
+const RAMBandwidth = lazy(() => import("./pages/tools/RAMBandwidth"));
 
 export const Router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ export const Router = createBrowserRouter([
           {
             path: "optical-media-speed-calculator",
             element: <OpticalMediaSpeedCalculator />,
+          },
+          {
+            path: "ram-bandwidth",
+            element: <RAMBandwidth />,
           },
         ],
       },

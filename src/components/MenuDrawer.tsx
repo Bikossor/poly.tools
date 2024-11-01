@@ -67,6 +67,9 @@ export const MenuDrawer = () => {
             <Link as={NavLink} to={"/tools/optical-media-speed-calculator"}>
               Optical Media Speed Calculator
             </Link>
+            <Link as={NavLink} to={"/tools/ram-bandwidth"}>
+              RAM Bandwidth
+            </Link>
           </Flex>
           <Flex direction={"column"}>
             <Link href={"https://github.com/Bikossor/poly.tools"} isExternal>
