@@ -12,28 +12,28 @@
     "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "@chakra-ui/icons": "^2.1.1",
-    "@chakra-ui/react": "^2.8.2",
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
-    "@fontsource/inter": "^5.0.18",
-    "framer-motion": "^11.1.7",
+    "@chakra-ui/icons": "^2.2.4",
+    "@chakra-ui/react": "^2.10.6",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@fontsource/inter": "^5.2.5",
+    "framer-motion": "^11.18.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.23.0",
-    "zustand": "^4.5.2"
+    "react-router-dom": "^6.30.0",
+    "zustand": "^4.5.6"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
-    "@types/react": "^18.3.1",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.2.1",
-    "prettier": "3.2.5",
-    "semantic-release": "^23.0.8",
-    "typescript": "^5.4.5",
-    "vite": "^5.2.10",
-    "vite-plugin-pwa": "^0.19.8"
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "prettier": "3.5.3",
+    "semantic-release": "^23.1.1",
+    "typescript": "^5.8.2",
+    "vite": "^5.4.14",
+    "vite-plugin-pwa": "^0.21.1"
   },
   "repository": {
     "type": "git",
