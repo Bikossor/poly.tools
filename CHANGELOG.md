@@ -1,3 +1,11 @@
+## [1.14.1](https://github.com/Bikossor/poly.tools/compare/v1.14.0...v1.14.1) (2025-10-31)
+
+
+### Bug Fixes
+
+* stabilize selector outputs ([8cef599](https://github.com/Bikossor/poly.tools/commit/8cef59907a700c9940cedbc33ba9a43e547d17fa)), closes [#143](https://github.com/Bikossor/poly.tools/issues/143)
+* update import ([c926659](https://github.com/Bikossor/poly.tools/commit/c9266599d99b32d5529a49eefe7396bcef6fbb5b)), closes [#142](https://github.com/Bikossor/poly.tools/issues/142)
+
 # [1.14.0](https://github.com/Bikossor/poly.tools/compare/v1.13.0...v1.14.0) (2024-11-01)
 
 
