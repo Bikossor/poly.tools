@@ -5,9 +5,10 @@ import { useMenuDrawerStore } from "../Stores";
 import { MenuDrawer } from "./MenuDrawer";
 import { Suspense } from "react";
 import { LoadingFallback } from "./LoadingFallback";
+import { useShallow } from "zustand/shallow";
 
 export const Layout = () => {
-  const openMenuDrawer = useMenuDrawerStore(state => state.open);
+  const openMenuDrawer = useMenuDrawerStore(useShallow(state => state.open));
 
   return (
     <div style={{ height: "100vh" }}>

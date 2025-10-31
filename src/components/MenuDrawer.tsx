@@ -16,6 +16,7 @@ import { useMenuDrawerStore } from "../Stores";
 import { NavLink } from "react-router-dom";
 import { SunIcon, MoonIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import { version } from "../../package.json";
+import { useShallow } from "zustand/shallow";
 
 const getColorModeIcon = (isDarkMode: boolean) =>
   isDarkMode ? <SunIcon /> : <MoonIcon />;
@@ -24,10 +25,12 @@ const getColorModeLabel = (isDarkMode: boolean) =>
   isDarkMode ? "Switch to light mode" : "Switch to dark mode";
 
 export const MenuDrawer = () => {
-  const { close, isOpen } = useMenuDrawerStore(state => ({
-    close: state.close,
-    isOpen: state.isOpen,
-  }));
+  const { close, isOpen } = useMenuDrawerStore(
+    useShallow(state => ({
+      close: state.close,
+      isOpen: state.isOpen,
+    })),
+  );
 
   const { colorMode, toggleColorMode } = useColorMode();
   const isDarkMode = colorMode === "dark";
