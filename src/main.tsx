@@ -5,7 +5,8 @@ import { RouterProvider } from "react-router-dom";
 import { ReloadPrompt } from "./components/ReloadPrompt";
 import { Router } from "./Router";
 import { CustomTheme } from "./CustomTheme";
-import "@fontsource/inter/latin.css";
+// Supports weights 100-900
+import "@fontsource-variable/inter/wght.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
