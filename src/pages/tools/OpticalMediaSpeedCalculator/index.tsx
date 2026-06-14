@@ -1,5 +1,4 @@
 import {
-  Heading,
   VStack,
   InputGroup,
   Input,
@@ -10,6 +9,7 @@ import { ReactNode, useReducer } from "react";
 import { MediaType, OpticalMediaSpeedCalculatorState } from "./types";
 import { OpticalMediaSpeedCalculatorReducer } from "./reducer";
 import { Text } from "../../../components/Text";
+import { Heading } from "../../../components/Heading";
 
 const initialState: OpticalMediaSpeedCalculatorState = {
   mediaType: "BD",

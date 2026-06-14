@@ -1,7 +1,6 @@
 import {
   Button,
   Flex,
-  Heading,
   Input,
   InputGroup,
   InputRightAddon,
@@ -12,6 +11,7 @@ import { ReactNode, useReducer } from "react";
 import { RAMBandwidthReducer } from "./reducer";
 import { presets } from "./presets";
 import { Text } from "../../../components/Text";
+import { Heading } from "../../../components/Heading";
 
 const initialState: RAMBandwidthState = {
   bandwidth: 19.2,

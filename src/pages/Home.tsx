@@ -1,22 +1,16 @@
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import {
-  Box,
-  Code,
-  Heading,
-  Link,
-  ListItem,
-  UnorderedList,
-} from "@chakra-ui/react";
+import { Box, Code, Link, ListItem, UnorderedList } from "@chakra-ui/react";
 import { Text } from "../components/Text";
+import { Heading } from "../components/Heading";
 
 export default () => {
   return (
     <>
       <Box pb={8}>
-        <Heading as={"h1"} pb={4}>
+        <Heading as={"h1"} style={{ paddingBottom: "1rem" }}>
           poly.tools
         </Heading>
-        <Heading as={"h2"} pb={4}>
+        <Heading as={"h2"} style={{ paddingBottom: "1rem" }}>
           About
         </Heading>
         <Text>
@@ -28,7 +22,7 @@ export default () => {
           and free of advertising.
         </Text>
       </Box>
-      <Heading as={"h2"} pb={4}>
+      <Heading as={"h2"} style={{ paddingBottom: "1rem" }}>
         Tech Stack
       </Heading>
       <Text>

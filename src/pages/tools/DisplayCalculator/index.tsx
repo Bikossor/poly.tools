@@ -4,7 +4,6 @@ import {
   Flex,
   Grid,
   GridItem,
-  Heading,
   IconButton,
   Input,
   InputGroup,
@@ -17,6 +16,7 @@ import { resolutionPresets } from "./presets";
 import { CompareListItem, DisplayCalculatorState } from "./types";
 import { DisplayCalculatorReducer } from "./reducer";
 import { Text } from "../../../components/Text";
+import { Heading } from "../../../components/Heading";
 
 const initialState: DisplayCalculatorState = {
   horizontalResolution: 1920,

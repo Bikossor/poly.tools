@@ -1,5 +1,4 @@
 import {
-  Heading,
   IconButton,
   Input,
   InputGroup,
@@ -10,6 +9,7 @@ import {
 import { CheckIcon, CopyIcon } from "@chakra-ui/icons";
 import { ChangeEvent, useEffect, useState } from "react";
 import { Text } from "../../components/Text";
+import { Heading } from "../../components/Heading";
 
 const calcCircularArea = (diameter: number) => {
   return (Math.PI * diameter ** 2) / 4;
