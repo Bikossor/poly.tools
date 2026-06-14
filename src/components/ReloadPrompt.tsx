@@ -1,13 +1,7 @@
-import {
-  Button,
-  HStack,
-  Text,
-  ToastId,
-  useToast,
-  VStack,
-} from "@chakra-ui/react";
+import { Button, HStack, ToastId, useToast, VStack } from "@chakra-ui/react";
 import { useEffect, useRef } from "react";
 import { useRegisterSW } from "virtual:pwa-register/react";
+import { Text } from "./Text";
 
 export const ReloadPrompt = () => {
   const toast = useToast();

@@ -9,7 +9,6 @@ import {
   Link,
   useColorMode,
   IconButton,
-  Text,
   Code,
 } from "@chakra-ui/react";
 import { useMenuDrawerStore } from "../Stores";
@@ -17,6 +16,7 @@ import { NavLink } from "react-router-dom";
 import { SunIcon, MoonIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import { version } from "../../package.json";
 import { useShallow } from "zustand/shallow";
+import { Text } from "./Text";
 
 const getColorModeIcon = (isDarkMode: boolean) =>
   isDarkMode ? <SunIcon /> : <MoonIcon />;
@@ -44,7 +44,7 @@ export const MenuDrawer = () => {
           alignItems="center"
           borderBottomWidth="1px"
         >
-          <Text flex={1}>{"poly.tools"}</Text>
+          <Text style={{ flex: 1 }}>{"poly.tools"}</Text>
           <Code colorScheme="teal">{`v${version}`}</Code>
         </DrawerHeader>
         <DrawerBody>

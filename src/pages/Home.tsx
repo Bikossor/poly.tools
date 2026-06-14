@@ -5,9 +5,9 @@ import {
   Heading,
   Link,
   ListItem,
-  Text,
   UnorderedList,
 } from "@chakra-ui/react";
+import { Text } from "../components/Text";
 
 export default () => {
   return (

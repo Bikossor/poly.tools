@@ -1,7 +1,6 @@
 import {
   Heading,
   VStack,
-  Text,
   InputGroup,
   Input,
   Select,
@@ -10,12 +9,7 @@ import {
 import { ReactNode, useReducer } from "react";
 import { RAIDCalculatorState, RAIDLevel } from "./types";
 import { RAIDCalculatorReducer } from "./reducer";
-
-type WithChildren = { children: ReactNode };
-
-const TextSpan = ({ children }: WithChildren) => (
-  <Text as={"span"}>{children}</Text>
-);
+import { Text } from "../../../components/Text";
 
 const initialState: RAIDCalculatorState = {
   diskSize: 14,
@@ -37,7 +31,7 @@ export default () => {
 
       <div style={{ display: "grid", rowGap: "2rem" }}>
         <VStack align={"start"}>
-          <TextSpan children={"Single disk size"} />
+          <Text as={"span"} children={"Single disk size"} />
           <InputGroup>
             <Input
               min={1}
@@ -66,7 +60,7 @@ export default () => {
           </InputGroup>
         </VStack>
         <VStack align={"start"}>
-          <TextSpan children={"Number of disks"} />
+          <Text as={"span"} children={"Number of disks"} />
           <Input
             min={1}
             value={state.numberOfDisks}
@@ -81,7 +75,7 @@ export default () => {
           />
         </VStack>
         <VStack align={"start"}>
-          <TextSpan children={"RAID level"} />
+          <Text as={"span"} children={"RAID level"} />
           <Select
             value={state.raidLevel}
             onChange={event => {
@@ -101,23 +95,23 @@ export default () => {
         {state.hasMinNumberOfDisks ? (
           <>
             <HStack>
-              <TextSpan children={"Net capacity:"} />
-              <TextSpan>
+              <Text as={"span"} children={"Net capacity:"} />
+              <Text as={"span"}>
                 {state.netCapacity.toFixed(2)} {state.diskSizeUnit}
-              </TextSpan>
+              </Text>
             </HStack>
             <HStack>
-              <TextSpan children={"Space efficiency:"} />
-              <TextSpan>
+              <Text as={"span"} children={"Space efficiency:"} />
+              <Text as={"span"}>
                 {state.efficiency.toLocaleString(undefined, {
                   style: "percent",
                   minimumFractionDigits: 2,
                 })}
-              </TextSpan>
+              </Text>
             </HStack>
             <HStack>
-              <TextSpan children={"Reliability:"} />
-              <TextSpan>{state.reliability} disk failure(s)</TextSpan>
+              <Text as={"span"} children={"Reliability:"} />
+              <Text as={"span"}>{state.reliability} disk failure(s)</Text>
             </HStack>
           </>
         ) : (

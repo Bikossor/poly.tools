@@ -5,19 +5,13 @@ import {
   Input,
   InputGroup,
   InputRightAddon,
-  Text,
   VStack,
 } from "@chakra-ui/react";
 import { RAMBandwidthState } from "./types";
 import { ReactNode, useReducer } from "react";
 import { RAMBandwidthReducer } from "./reducer";
 import { presets } from "./presets";
-
-type WithChildren = { children: ReactNode };
-
-const TextSpan = ({ children }: WithChildren) => (
-  <Text as={"span"}>{children}</Text>
-);
+import { Text } from "../../../components/Text";
 
 const initialState: RAMBandwidthState = {
   bandwidth: 19.2,
@@ -33,7 +27,7 @@ export default () => {
 
       <div style={{ display: "grid", rowGap: "2rem" }}>
         <VStack align={"start"}>
-          <TextSpan children={"Transfer rate"} />
+          <Text as={"span"} children={"Transfer rate"} />
 
           <InputGroup>
             <Input
@@ -53,7 +47,7 @@ export default () => {
           </InputGroup>
         </VStack>
         <VStack align={"start"}>
-          <TextSpan children={"Presets"} />
+          <Text as={"span"} children={"Presets"} />
           <Flex width="100%" flexWrap="wrap" gap={2}>
             {presets.map(({ transferRate: dataTransferRate, label }) => (
               <Button
@@ -78,7 +72,7 @@ export default () => {
           </Flex>
         </VStack>
         <VStack align={"start"}>
-          <TextSpan children={"Bandwidth"} />
+          <Text as={"span"} children={"Bandwidth"} />
 
           <InputGroup>
             <Input

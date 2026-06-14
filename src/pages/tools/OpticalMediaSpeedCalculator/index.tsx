@@ -1,7 +1,6 @@
 import {
   Heading,
   VStack,
-  Text,
   InputGroup,
   Input,
   Select,
@@ -10,12 +9,7 @@ import {
 import { ReactNode, useReducer } from "react";
 import { MediaType, OpticalMediaSpeedCalculatorState } from "./types";
 import { OpticalMediaSpeedCalculatorReducer } from "./reducer";
-
-type WithChildren = { children: ReactNode };
-
-const TextSpan = ({ children }: WithChildren) => (
-  <Text as={"span"}>{children}</Text>
-);
+import { Text } from "../../../components/Text";
 
 const initialState: OpticalMediaSpeedCalculatorState = {
   mediaType: "BD",
@@ -36,7 +30,7 @@ export default () => {
 
       <div style={{ display: "grid", rowGap: "2rem" }}>
         <VStack align={"start"}>
-          <TextSpan children={"Media type"} />
+          <Text as={"span"} children={"Media type"} />
           <Select
             value={state.mediaType}
             onChange={event => {
@@ -52,7 +46,7 @@ export default () => {
           </Select>
         </VStack>
         <VStack align={"start"}>
-          <TextSpan children={"Speed"} />
+          <Text as={"span"} children={"Speed"} />
           <InputGroup>
             <Input
               type={"number"}
@@ -67,18 +61,18 @@ export default () => {
             <InputRightAddon children={"×"} />
           </InputGroup>
         </VStack>
-        <TextSpan>
+        <Text as={"span"}>
           {state.totalSpeed.toLocaleString(undefined, {
             style: "unit",
             unit: "megabit-per-second",
           })}
-        </TextSpan>
-        <TextSpan>
+        </Text>
+        <Text as={"span"}>
           {state.totalSpeedBytes.toLocaleString(undefined, {
             style: "unit",
             unit: "megabyte-per-second",
           })}
-        </TextSpan>
+        </Text>
       </div>
     </>
   );

@@ -9,20 +9,14 @@ import {
   Input,
   InputGroup,
   InputRightElement,
-  Text,
   useClipboard,
   VStack,
 } from "@chakra-ui/react";
-import { ReactNode, useEffect, useReducer, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { resolutionPresets } from "./presets";
 import { CompareListItem, DisplayCalculatorState } from "./types";
 import { DisplayCalculatorReducer } from "./reducer";
-
-type WithChildren = { children: ReactNode };
-
-const TextSpan = ({ children }: WithChildren) => (
-  <Text as={"span"}>{children}</Text>
-);
+import { Text } from "../../../components/Text";
 
 const initialState: DisplayCalculatorState = {
   horizontalResolution: 1920,
@@ -66,7 +60,7 @@ export default () => {
 
       <div style={{ display: "grid", rowGap: "2rem" }}>
         <VStack align={"start"}>
-          <TextSpan children={"Horizontal resolution"} />
+          <Text as={"span"} children={"Horizontal resolution"} />
           <InputGroup>
             <Input
               value={state.horizontalResolution}
@@ -82,7 +76,7 @@ export default () => {
           </InputGroup>
         </VStack>
         <VStack align={"start"}>
-          <TextSpan children={"Vertical resolution"} />
+          <Text as={"span"} children={"Vertical resolution"} />
           <InputGroup>
             <Input
               value={state.verticalResolution}
@@ -98,7 +92,7 @@ export default () => {
           </InputGroup>
         </VStack>
         <VStack align={"start"}>
-          <TextSpan children={"Resolution presets"} />
+          <Text as={"span"} children={"Resolution presets"} />
           <Flex width="100%" flexWrap="wrap" gap={2}>
             {resolutionPresets.map(preset => (
               <Button
@@ -129,7 +123,7 @@ export default () => {
           </Flex>
         </VStack>
         <VStack align={"start"}>
-          <TextSpan children={"Diagonal"} />
+          <Text as={"span"} children={"Diagonal"} />
           <InputGroup>
             <Input
               value={state.diagonal}
@@ -145,7 +139,7 @@ export default () => {
           </InputGroup>
         </VStack>
         <VStack align={"start"}>
-          <TextSpan children={"Pixel density"} />
+          <Text as={"span"} children={"Pixel density"} />
           <InputGroup>
             <Input
               variant="filled"
