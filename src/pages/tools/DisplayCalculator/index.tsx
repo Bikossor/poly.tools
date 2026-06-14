@@ -7,7 +7,6 @@ import {
   InputGroup,
   InputRightElement,
   useClipboard,
-  VStack,
 } from "@chakra-ui/react";
 import { useEffect, useReducer, useState } from "react";
 import { resolutionPresets } from "./presets";
@@ -16,6 +15,7 @@ import { DisplayCalculatorReducer } from "./reducer";
 import { Text } from "../../../components/Text";
 import { Heading } from "../../../components/Heading";
 import { Button } from "../../../components/Button";
+import { VStack } from "../../../components/VStack";
 
 const initialState: DisplayCalculatorState = {
   horizontalResolution: 1920,
@@ -170,7 +170,7 @@ export default () => {
 
         <VStack align={"start"}>
           {compareList.length > 0 && <Heading as={"h2"}>Compare list</Heading>}
-          <VStack width="100%">
+          <VStack style={{ width: "100%" }}>
             {compareList.map(compareListItem => (
               <Grid
                 width="100%"

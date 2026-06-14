@@ -1,10 +1,4 @@
-import {
-  Flex,
-  Input,
-  InputGroup,
-  InputRightAddon,
-  VStack,
-} from "@chakra-ui/react";
+import { Flex, Input, InputGroup, InputRightAddon } from "@chakra-ui/react";
 import { RAMBandwidthState } from "./types";
 import { ReactNode, useReducer } from "react";
 import { RAMBandwidthReducer } from "./reducer";
@@ -12,6 +6,7 @@ import { presets } from "./presets";
 import { Text } from "../../../components/Text";
 import { Heading } from "../../../components/Heading";
 import { Button } from "../../../components/Button";
+import { VStack } from "../../../components/VStack";
 
 const initialState: RAMBandwidthState = {
   bandwidth: 19.2,

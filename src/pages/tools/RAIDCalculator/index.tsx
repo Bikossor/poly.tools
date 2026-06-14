@@ -1,9 +1,10 @@
-import { VStack, InputGroup, Input, Select, HStack } from "@chakra-ui/react";
+import { InputGroup, Input, Select, HStack } from "@chakra-ui/react";
 import { ReactNode, useReducer } from "react";
 import { RAIDCalculatorState, RAIDLevel } from "./types";
 import { RAIDCalculatorReducer } from "./reducer";
 import { Text } from "../../../components/Text";
 import { Heading } from "../../../components/Heading";
+import { VStack } from "../../../components/VStack";
 
 const initialState: RAIDCalculatorState = {
   diskSize: 14,

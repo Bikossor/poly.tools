@@ -1,5 +1,5 @@
 import { HamburgerIcon } from "@chakra-ui/icons";
-import { Container, VStack } from "@chakra-ui/react";
+import { Container } from "@chakra-ui/react";
 import { Outlet } from "react-router-dom";
 import { useMenuDrawerStore } from "../Stores";
 import { MenuDrawer } from "./MenuDrawer";
@@ -7,6 +7,7 @@ import { Suspense } from "react";
 import { LoadingFallback } from "./LoadingFallback";
 import { useShallow } from "zustand/shallow";
 import { Button } from "./Button";
+import { VStack } from "./VStack";
 
 export const Layout = () => {
   const openMenuDrawer = useMenuDrawerStore(useShallow(state => state.open));
