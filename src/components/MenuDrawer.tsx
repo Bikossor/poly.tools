@@ -14,9 +14,7 @@ import { NavLink } from "react-router-dom";
 import { SunIcon, MoonIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import { version } from "../../package.json";
 import { useShallow } from "zustand/shallow";
-import { Text } from "./Text";
-import { Button } from "./Button";
-import { Code } from "./Code";
+import { Text, Code, Button } from "@components";
 
 const getColorModeIcon = (isDarkMode: boolean) =>
   isDarkMode ? <SunIcon /> : <MoonIcon />;
