@@ -1,6 +1,11 @@
-import { CSSProperties, MouseEventHandler, ReactNode } from "react";
+import {
+  ButtonHTMLAttributes,
+  CSSProperties,
+  MouseEventHandler,
+  ReactNode,
+} from "react";
 
-type ButtonProps = {
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "outline";
   colorScheme?: "green" | "gray" | "blackAlpha" | "red";
   style?: CSSProperties;
@@ -16,9 +21,10 @@ export const Button = ({
   style,
   onClick,
   children,
+  ...rest
 }: ButtonProps) => {
   return (
-    <button onClick={onClick} style={style}>
+    <button onClick={onClick} style={style} {...rest}>
       {children}
     </button>
   );
