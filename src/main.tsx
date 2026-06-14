@@ -5,6 +5,7 @@ import { RouterProvider } from "react-router-dom";
 import { ReloadPrompt } from "./components/ReloadPrompt";
 import { Router } from "./Router";
 import { CustomTheme } from "./CustomTheme";
+import "./styles.css";
 // Supports weights 100-900
 import "@fontsource-variable/inter/wght.css";
 
