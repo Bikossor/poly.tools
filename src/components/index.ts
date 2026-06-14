@@ -1,6 +1,7 @@
 export { Button } from "./Button";
 export { Code } from "./Code";
 export { Heading } from "./Heading";
+export { HStack } from "./HStack";
 export { Layout } from "./Layout";
 export { ListItem } from "./ListItem";
 export { LoadingFallback } from "./LoadingFallback";
