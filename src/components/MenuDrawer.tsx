@@ -8,7 +8,6 @@ import {
   Flex,
   Link,
   useColorMode,
-  Code,
 } from "@chakra-ui/react";
 import { useMenuDrawerStore } from "../Stores";
 import { NavLink } from "react-router-dom";
@@ -17,6 +16,7 @@ import { version } from "../../package.json";
 import { useShallow } from "zustand/shallow";
 import { Text } from "./Text";
 import { Button } from "./Button";
+import { Code } from "./Code";
 
 const getColorModeIcon = (isDarkMode: boolean) =>
   isDarkMode ? <SunIcon /> : <MoonIcon />;
