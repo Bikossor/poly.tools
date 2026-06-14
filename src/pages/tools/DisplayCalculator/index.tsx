@@ -1,6 +1,5 @@
 import { CheckIcon, CopyIcon } from "@chakra-ui/icons";
 import {
-  Button,
   Flex,
   Grid,
   GridItem,
@@ -17,6 +16,7 @@ import { CompareListItem, DisplayCalculatorState } from "./types";
 import { DisplayCalculatorReducer } from "./reducer";
 import { Text } from "../../../components/Text";
 import { Heading } from "../../../components/Heading";
+import { Button } from "../../../components/Button";
 
 const initialState: DisplayCalculatorState = {
   horizontalResolution: 1920,
@@ -97,7 +97,6 @@ export default () => {
             {resolutionPresets.map(preset => (
               <Button
                 key={preset.label}
-                flex={1}
                 onClick={() =>
                   dispatch({
                     type: "SET_RESOLUTION_PRESET",
@@ -114,8 +113,7 @@ export default () => {
                     ? "green"
                     : "gray"
                 }
-                style={{ cursor: "pointer" }}
-                minW={16}
+                style={{ cursor: "pointer", flex: 1 }}
               >
                 {preset.label}
               </Button>

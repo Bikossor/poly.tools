@@ -1,5 +1,4 @@
 import {
-  Button,
   Flex,
   Input,
   InputGroup,
@@ -12,6 +11,7 @@ import { RAMBandwidthReducer } from "./reducer";
 import { presets } from "./presets";
 import { Text } from "../../../components/Text";
 import { Heading } from "../../../components/Heading";
+import { Button } from "../../../components/Button";
 
 const initialState: RAMBandwidthState = {
   bandwidth: 19.2,
@@ -52,7 +52,6 @@ export default () => {
             {presets.map(({ transferRate: dataTransferRate, label }) => (
               <Button
                 key={label}
-                flex={1}
                 onClick={() =>
                   dispatch({
                     type: "SET_TRANSFER_RATE",
@@ -63,8 +62,7 @@ export default () => {
                 colorScheme={
                   state.transferRate === dataTransferRate ? "green" : "gray"
                 }
-                style={{ cursor: "pointer" }}
-                minW={16}
+                style={{ cursor: "pointer", flex: 1 }}
               >
                 {label}
               </Button>
