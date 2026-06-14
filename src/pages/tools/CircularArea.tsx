@@ -1,5 +1,4 @@
 import {
-  IconButton,
   Input,
   InputGroup,
   InputRightElement,
@@ -10,6 +9,7 @@ import { CheckIcon, CopyIcon } from "@chakra-ui/icons";
 import { ChangeEvent, useEffect, useState } from "react";
 import { Text } from "../../components/Text";
 import { Heading } from "../../components/Heading";
+import { Button } from "../../components/Button";
 
 const calcCircularArea = (diameter: number) => {
   return (Math.PI * diameter ** 2) / 4;
@@ -49,13 +49,14 @@ export default () => {
           <InputGroup>
             <Input value={value} readOnly />
             <InputRightElement>
-              <IconButton
-                icon={copyIcon}
+              <Button
                 title={copyText}
                 aria-label={copyText}
                 onClick={onCopy}
                 colorScheme={hasCopied ? "green" : "gray"}
-              />
+              >
+                {copyIcon}
+              </Button>
             </InputRightElement>
           </InputGroup>
         </VStack>

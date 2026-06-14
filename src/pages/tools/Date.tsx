@@ -1,6 +1,5 @@
 import { CheckIcon, CopyIcon } from "@chakra-ui/icons";
 import {
-  IconButton,
   Input,
   InputGroup,
   InputLeftAddon,
@@ -8,6 +7,7 @@ import {
   useClipboard,
 } from "@chakra-ui/react";
 import { Heading } from "../../components/Heading";
+import { Button } from "../../components/Button";
 
 const getWeekNumber = (date: Date): number => {
   const d = new Date(
@@ -49,13 +49,14 @@ export default () => {
           <InputLeftAddon children={"Calendar week"} />
           <Input defaultValue={value} />
           <InputRightElement>
-            <IconButton
-              icon={copyIcon}
+            <Button
               title={copyText}
               aria-label={copyText}
               onClick={onCopy}
               colorScheme={hasCopied ? "green" : "gray"}
-            />
+            >
+              {copyIcon}
+            </Button>
           </InputRightElement>
         </InputGroup>
         <InputGroup>

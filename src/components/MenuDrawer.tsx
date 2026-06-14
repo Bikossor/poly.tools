@@ -8,7 +8,6 @@ import {
   Flex,
   Link,
   useColorMode,
-  IconButton,
   Code,
 } from "@chakra-ui/react";
 import { useMenuDrawerStore } from "../Stores";
@@ -17,6 +16,7 @@ import { SunIcon, MoonIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import { version } from "../../package.json";
 import { useShallow } from "zustand/shallow";
 import { Text } from "./Text";
+import { Button } from "./Button";
 
 const getColorModeIcon = (isDarkMode: boolean) =>
   isDarkMode ? <SunIcon /> : <MoonIcon />;
@@ -89,12 +89,13 @@ export const MenuDrawer = () => {
           </Flex>
         </DrawerBody>
         <DrawerFooter>
-          <IconButton
-            icon={getColorModeIcon(isDarkMode)}
+          <Button
             title={getColorModeLabel(isDarkMode)}
             aria-label={getColorModeLabel(isDarkMode)}
             onClick={() => toggleColorMode()}
-          />
+          >
+            {getColorModeIcon(isDarkMode)}
+          </Button>
         </DrawerFooter>
       </DrawerContent>
     </Drawer>

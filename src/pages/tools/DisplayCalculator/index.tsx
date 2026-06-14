@@ -3,7 +3,6 @@ import {
   Flex,
   Grid,
   GridItem,
-  IconButton,
   Input,
   InputGroup,
   InputRightElement,
@@ -147,13 +146,14 @@ export default () => {
               readOnly
             />
             <InputRightElement>
-              <IconButton
-                icon={copyIcon}
+              <Button
                 title={copyText}
                 aria-label={copyText}
                 onClick={onCopy}
                 colorScheme={hasCopied ? "green" : "gray"}
-              />
+              >
+                {copyIcon}
+              </Button>
             </InputRightElement>
           </InputGroup>
         </VStack>
