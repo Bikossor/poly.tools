@@ -1,5 +1,5 @@
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { Box, Link } from "@chakra-ui/react";
+import { Link } from "@chakra-ui/react";
 import { Text } from "../components/Text";
 import { Heading } from "../components/Heading";
 import { UnorderedList } from "../components/UnorderedList";
@@ -9,7 +9,7 @@ import { Code } from "../components/Code";
 export default () => {
   return (
     <>
-      <Box pb={8}>
+      <div style={{ paddingBottom: "2rem" }}>
         <Heading as={"h1"} style={{ paddingBottom: "1rem" }}>
           poly.tools
         </Heading>
@@ -24,7 +24,7 @@ export default () => {
           for all the small tools you could need. It's modern, free of charge
           and free of advertising.
         </Text>
-      </Box>
+      </div>
       <Heading as={"h2"} style={{ paddingBottom: "1rem" }}>
         Tech Stack
       </Heading>
