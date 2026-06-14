@@ -6,8 +6,7 @@ import {
   InputRightElement,
   useClipboard,
 } from "@chakra-ui/react";
-import { Heading } from "../../components/Heading";
-import { Button } from "../../components/Button";
+import { Button, Heading } from "@components";
 
 const getWeekNumber = (date: Date): number => {
   const d = new Date(

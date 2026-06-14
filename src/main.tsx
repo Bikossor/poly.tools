@@ -2,7 +2,7 @@ import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
-import { ReloadPrompt } from "./components/ReloadPrompt";
+import { ReloadPrompt } from "@components";
 import { Router } from "./Router";
 import { CustomTheme } from "./CustomTheme";
 import "./styles.css";

@@ -1,5 +1,6 @@
 import { CheckIcon, CopyIcon } from "@chakra-ui/icons";
 import {
+  Button,
   Flex,
   Grid,
   GridItem,
@@ -7,15 +8,13 @@ import {
   InputGroup,
   InputRightElement,
   useClipboard,
+  VStack,
 } from "@chakra-ui/react";
 import { useEffect, useReducer, useState } from "react";
 import { resolutionPresets } from "./presets";
 import { CompareListItem, DisplayCalculatorState } from "./types";
 import { DisplayCalculatorReducer } from "./reducer";
-import { Text } from "../../../components/Text";
-import { Heading } from "../../../components/Heading";
-import { Button } from "../../../components/Button";
-import { VStack } from "../../../components/VStack";
+import { Heading, Text } from "@components";
 
 const initialState: DisplayCalculatorState = {
   horizontalResolution: 1920,

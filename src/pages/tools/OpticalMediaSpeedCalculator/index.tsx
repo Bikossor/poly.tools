@@ -2,9 +2,7 @@ import { InputGroup, Input, Select, InputRightAddon } from "@chakra-ui/react";
 import { ReactNode, useReducer } from "react";
 import { MediaType, OpticalMediaSpeedCalculatorState } from "./types";
 import { OpticalMediaSpeedCalculatorReducer } from "./reducer";
-import { Text } from "../../../components/Text";
-import { Heading } from "../../../components/Heading";
-import { VStack } from "../../../components/VStack";
+import { Heading, Text, VStack } from "@components";
 
 const initialState: OpticalMediaSpeedCalculatorState = {
   mediaType: "BD",

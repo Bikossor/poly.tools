@@ -1,6 +1,6 @@
 import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
-import { Layout } from "./components/Layout";
+import { Layout } from "@components";
 
 const Home = lazy(() => import("./pages/Home"));
 const CircularArea = lazy(() => import("./pages/tools/CircularArea"));

@@ -1,10 +1,6 @@
 import { ExternalLinkIcon } from "@chakra-ui/icons";
-import { Link } from "@chakra-ui/react";
-import { Text } from "../components/Text";
-import { Heading } from "../components/Heading";
-import { UnorderedList } from "../components/UnorderedList";
-import { ListItem } from "../components/ListItem";
-import { Code } from "../components/Code";
+import { Code, Link, ListItem, UnorderedList } from "@chakra-ui/react";
+import { Heading, Text } from "@components";
 
 export default () => {
   return (

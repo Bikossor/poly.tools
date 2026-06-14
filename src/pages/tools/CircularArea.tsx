@@ -6,10 +6,7 @@ import {
 } from "@chakra-ui/react";
 import { CheckIcon, CopyIcon } from "@chakra-ui/icons";
 import { ChangeEvent, useEffect, useState } from "react";
-import { Text } from "../../components/Text";
-import { Heading } from "../../components/Heading";
-import { Button } from "../../components/Button";
-import { VStack } from "../../components/VStack";
+import { Button, Heading, Text, VStack } from "@components";
 
 const calcCircularArea = (diameter: number) => {
   return (Math.PI * diameter ** 2) / 4;
