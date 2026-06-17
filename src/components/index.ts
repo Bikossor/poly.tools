@@ -8,6 +8,7 @@ export { ListItem } from "./ListItem";
 export { LoadingFallback } from "./LoadingFallback";
 export { MenuDrawer } from "./MenuDrawer";
 export { ReloadPrompt } from "./ReloadPrompt";
+export { Select } from "./Select";
 export { Text } from "./Text";
 export { UnorderedList } from "./UnorderedList";
 export { VStack } from "./VStack";
