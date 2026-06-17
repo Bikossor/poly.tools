@@ -5,7 +5,6 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
-  Flex,
   Link,
   useColorMode,
 } from "@chakra-ui/react";
@@ -46,7 +45,7 @@ export const MenuDrawer = () => {
           <Code colorScheme="teal">{`v${version}`}</Code>
         </DrawerHeader>
         <DrawerBody>
-          <Flex borderBottomWidth="1px" direction={"column"}>
+          <div style={{ borderBottomWidth: "1px", flexDirection: "column" }}>
             <Link as={NavLink} to={"/"}>
               Home
             </Link>
@@ -71,8 +70,8 @@ export const MenuDrawer = () => {
             <Link as={NavLink} to={"/tools/ram-bandwidth"}>
               RAM Bandwidth
             </Link>
-          </Flex>
-          <Flex direction={"column"}>
+          </div>
+          <div style={{ flexDirection: "column" }}>
             <Link href={"https://github.com/Bikossor/poly.tools"} isExternal>
               GitHub Repo <ExternalLinkIcon mx="2px" />
             </Link>
@@ -84,7 +83,7 @@ export const MenuDrawer = () => {
             >
               Changelog <ExternalLinkIcon mx="2px" />
             </Link>
-          </Flex>
+          </div>
         </DrawerBody>
         <DrawerFooter>
           <Button

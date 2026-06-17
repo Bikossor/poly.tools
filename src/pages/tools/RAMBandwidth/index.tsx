@@ -1,4 +1,4 @@
-import { Flex, Input, InputGroup, InputRightAddon } from "@chakra-ui/react";
+import { Input, InputGroup, InputRightAddon } from "@chakra-ui/react";
 import { RAMBandwidthState } from "./types";
 import { ReactNode, useReducer } from "react";
 import { RAMBandwidthReducer } from "./reducer";
@@ -40,7 +40,7 @@ export default () => {
         </VStack>
         <VStack align={"start"}>
           <Text as={"span"} children={"Presets"} />
-          <Flex width="100%" flexWrap="wrap" gap={2}>
+          <div style={{ width: "100%", flexWrap: "wrap", gap: "0.5rem" }}>
             {presets.map(({ transferRate: dataTransferRate, label }) => (
               <Button
                 key={label}
@@ -59,7 +59,7 @@ export default () => {
                 {label}
               </Button>
             ))}
-          </Flex>
+          </div>
         </VStack>
         <VStack align={"start"}>
           <Text as={"span"} children={"Bandwidth"} />
