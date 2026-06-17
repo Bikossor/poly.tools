@@ -88,7 +88,14 @@ export default () => {
         </VStack>
         <VStack align={"start"}>
           <Text as={"span"} children={"Resolution presets"} />
-          <div style={{ width: "100%", flexWrap: "wrap", gap: "0.5rem" }}>
+          <div
+            style={{
+              display: "flex",
+              width: "100%",
+              flexWrap: "wrap",
+              gap: "0.5rem",
+            }}
+          >
             {resolutionPresets.map(preset => (
               <Button
                 key={preset.label}

@@ -45,7 +45,13 @@ export const MenuDrawer = () => {
           <Code colorScheme="teal">{`v${version}`}</Code>
         </DrawerHeader>
         <DrawerBody>
-          <div style={{ borderBottomWidth: "1px", flexDirection: "column" }}>
+          <div
+            style={{
+              display: "flex",
+              borderBottomWidth: "1px",
+              flexDirection: "column",
+            }}
+          >
             <Link as={NavLink} to={"/"}>
               Home
             </Link>

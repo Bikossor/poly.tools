@@ -40,7 +40,14 @@ export default () => {
         </VStack>
         <VStack align={"start"}>
           <Text as={"span"} children={"Presets"} />
-          <div style={{ width: "100%", flexWrap: "wrap", gap: "0.5rem" }}>
+          <div
+            style={{
+              display: "flex",
+              width: "100%",
+              flexWrap: "wrap",
+              gap: "0.5rem",
+            }}
+          >
             {presets.map(({ transferRate: dataTransferRate, label }) => (
               <Button
                 key={label}

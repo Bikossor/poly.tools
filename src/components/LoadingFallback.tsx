@@ -3,7 +3,9 @@ import { Text } from "./Text";
 
 export const LoadingFallback = () => {
   return (
-    <div style={{ flexDirection: "column", alignItems: "center" }}>
+    <div
+      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+    >
       <Spinner size="xl" />
       <Text>Loading...</Text>
     </div>
