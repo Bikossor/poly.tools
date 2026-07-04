@@ -1,12 +1,15 @@
-import {
-  Input,
-  InputGroup,
-  InputRightElement,
-  useClipboard,
-} from "@chakra-ui/react";
+import { useClipboard } from "@chakra-ui/react";
 import { CheckIcon, CopyIcon } from "@chakra-ui/icons";
 import { ChangeEvent, useEffect, useState } from "react";
-import { Button, Heading, Text, VStack } from "@components";
+import {
+  Button,
+  Heading,
+  InputGroup,
+  Text,
+  VStack,
+  Input,
+  InputRightAddon,
+} from "@components";
 
 const calcCircularArea = (diameter: number) => {
   return (Math.PI * diameter ** 2) / 4;
@@ -34,7 +37,7 @@ export default () => {
           <Text as="span">Diameter</Text>
           <InputGroup>
             <Input
-              value={diameter ?? 0}
+              value={(diameter ?? 0).toString()}
               onChange={handleDiameterChange}
               type="number"
               min={0}
@@ -45,7 +48,7 @@ export default () => {
           <Text as="span">Circular area</Text>
           <InputGroup>
             <Input value={value} readOnly />
-            <InputRightElement>
+            <InputRightAddon>
               <Button
                 title={copyText}
                 aria-label={copyText}
@@ -54,7 +57,7 @@ export default () => {
               >
                 {copyIcon}
               </Button>
-            </InputRightElement>
+            </InputRightAddon>
           </InputGroup>
         </VStack>
       </div>

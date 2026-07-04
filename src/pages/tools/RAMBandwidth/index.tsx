@@ -1,9 +1,16 @@
-import { Input, InputGroup, InputRightAddon } from "@chakra-ui/react";
 import { RAMBandwidthState } from "./types";
 import { ReactNode, useReducer } from "react";
 import { RAMBandwidthReducer } from "./reducer";
 import { presets } from "./presets";
-import { Button, Heading, Text, VStack } from "@components";
+import {
+  Button,
+  Heading,
+  Input,
+  InputGroup,
+  InputRightAddon,
+  Text,
+  VStack,
+} from "@components";
 
 const initialState: RAMBandwidthState = {
   bandwidth: 19.2,
@@ -24,7 +31,7 @@ export default () => {
           <InputGroup>
             <Input
               min={1}
-              value={state.transferRate}
+              value={state.transferRate.toString()}
               type="number"
               inputMode="numeric"
               onChange={event => {
@@ -74,7 +81,7 @@ export default () => {
           <InputGroup>
             <Input
               min={1}
-              value={state.bandwidth}
+              value={state.bandwidth.toString()}
               type="number"
               inputMode="numeric"
               readOnly

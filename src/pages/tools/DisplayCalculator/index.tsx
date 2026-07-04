@@ -1,17 +1,18 @@
 import { CheckIcon, CopyIcon } from "@chakra-ui/icons";
-import {
-  Grid,
-  GridItem,
-  Input,
-  InputGroup,
-  InputRightElement,
-  useClipboard,
-} from "@chakra-ui/react";
+import { Grid, GridItem, useClipboard } from "@chakra-ui/react";
 import { useEffect, useReducer, useState } from "react";
 import { resolutionPresets } from "./presets";
 import { CompareListItem, DisplayCalculatorState } from "./types";
 import { DisplayCalculatorReducer } from "./reducer";
-import { Button, Heading, Text, VStack } from "@components";
+import {
+  Button,
+  Heading,
+  Input,
+  InputGroup,
+  InputRightAddon,
+  Text,
+  VStack,
+} from "@components";
 
 const initialState: DisplayCalculatorState = {
   horizontalResolution: 1920,
@@ -58,7 +59,7 @@ export default () => {
           <Text as={"span"} children={"Horizontal resolution"} />
           <InputGroup>
             <Input
-              value={state.horizontalResolution}
+              value={state.horizontalResolution.toString()}
               type="number"
               inputMode="numeric"
               onChange={event =>
@@ -74,7 +75,7 @@ export default () => {
           <Text as={"span"} children={"Vertical resolution"} />
           <InputGroup>
             <Input
-              value={state.verticalResolution}
+              value={state.verticalResolution.toString()}
               type="number"
               inputMode="numeric"
               onChange={event =>
@@ -126,7 +127,7 @@ export default () => {
           <Text as={"span"} children={"Diagonal"} />
           <InputGroup>
             <Input
-              value={state.diagonal}
+              value={state.diagonal.toString()}
               type="number"
               inputMode="decimal"
               onChange={event =>
@@ -148,7 +149,7 @@ export default () => {
               value={state.pixelDensity.toFixed(3)}
               readOnly
             />
-            <InputRightElement>
+            <InputRightAddon>
               <Button
                 title={copyText}
                 aria-label={copyText}
@@ -157,7 +158,7 @@ export default () => {
               >
                 {copyIcon}
               </Button>
-            </InputRightElement>
+            </InputRightAddon>
           </InputGroup>
         </VStack>
         <Button onClick={() => addToCompare()} colorScheme="green">

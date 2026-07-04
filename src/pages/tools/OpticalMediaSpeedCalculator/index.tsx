@@ -1,8 +1,15 @@
-import { InputGroup, Input, InputRightAddon } from "@chakra-ui/react";
 import { ReactNode, useReducer } from "react";
 import { MediaType, OpticalMediaSpeedCalculatorState } from "./types";
 import { OpticalMediaSpeedCalculatorReducer } from "./reducer";
-import { Heading, Text, VStack, Select } from "@components";
+import {
+  Heading,
+  Text,
+  VStack,
+  Select,
+  InputGroup,
+  Input,
+  InputRightAddon,
+} from "@components";
 
 const initialState: OpticalMediaSpeedCalculatorState = {
   mediaType: "BD",
@@ -43,7 +50,7 @@ export default () => {
           <InputGroup>
             <Input
               type={"number"}
-              value={state.speed}
+              value={state.speed.toString()}
               onChange={event => {
                 dispatch({
                   type: "SET_SPEED",
