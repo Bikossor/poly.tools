@@ -6,6 +6,7 @@ export { Heading } from "./Heading";
 export { HStack } from "./HStack";
 export { Input } from "./Input";
 export { InputGroup } from "./InputGroup";
+export { InputLeftAddon } from "./InputLeftAddon";
 export { InputRightAddon } from "./InputRightAddon";
 export { Layout } from "./Layout";
 export { ListItem } from "./ListItem";
