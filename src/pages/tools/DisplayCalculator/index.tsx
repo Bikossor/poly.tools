@@ -1,5 +1,5 @@
 import { CheckIcon, CopyIcon } from "@chakra-ui/icons";
-import { Grid, GridItem, useClipboard } from "@chakra-ui/react";
+import { useClipboard } from "@chakra-ui/react";
 import { useEffect, useReducer, useState } from "react";
 import { resolutionPresets } from "./presets";
 import { CompareListItem, DisplayCalculatorState } from "./types";
@@ -176,25 +176,21 @@ export default () => {
           {compareList.length > 0 && <Heading as={"h2"}>Compare list</Heading>}
           <VStack style={{ width: "100%" }}>
             {compareList.map(compareListItem => (
-              <Grid
-                width="100%"
-                templateColumns="1fr 1fr 1fr 2fr"
-                columnGap={2}
-                alignItems="center"
+              <div
+                className="grid w-full items-center gap-2"
+                style={{
+                  gridTemplateColumns: "1fr 1fr 1fr 1fr",
+                }}
               >
-                <GridItem textAlign={"end"}>
+                <div className="text-end">
                   {compareListItem.horizontalResolution}
-                </GridItem>
-                <GridItem textAlign={"end"}>
+                </div>
+                <div className="text-end">
                   {compareListItem.verticalResolution}
-                </GridItem>
-                <GridItem
-                  textAlign={"end"}
-                >{`${compareListItem.diagonal}"`}</GridItem>
-                <GridItem
-                  textAlign={"end"}
-                >{`${compareListItem.pixelDensity.toFixed(3)} PPI`}</GridItem>
-              </Grid>
+                </div>
+                <div className="text-end">{`${compareListItem.diagonal}"`}</div>
+                <div className="text-end">{`${compareListItem.pixelDensity.toFixed(3)} PPI`}</div>
+              </div>
             ))}
           </VStack>
         </VStack>
