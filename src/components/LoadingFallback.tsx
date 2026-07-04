@@ -1,4 +1,4 @@
-import { Spinner } from "@chakra-ui/react";
+import { Spinner } from "@components";
 import { Text } from "./Text";
 
 export const LoadingFallback = () => {
