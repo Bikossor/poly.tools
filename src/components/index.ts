@@ -5,6 +5,7 @@ export { FormLabel } from "./FormLabel";
 export { Heading } from "./Heading";
 export { HStack } from "./HStack";
 export { Input } from "./Input";
+export { InputGroup } from "./InputGroup";
 export { Layout } from "./Layout";
 export { ListItem } from "./ListItem";
 export { LoadingFallback } from "./LoadingFallback";
