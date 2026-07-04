@@ -1,6 +1,6 @@
-import { FormLabel, Textarea } from "@chakra-ui/react";
+import { Textarea } from "@chakra-ui/react";
 import { useState } from "react";
-import { Button, Heading } from "@components";
+import { Button, FormLabel, Heading } from "@components";
 
 export default () => {
   const [unsorted, setUnsorted] = useState("");
