@@ -5,11 +5,10 @@ import {
   DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
-  Link,
   useColorMode,
 } from "@chakra-ui/react";
 import { useMenuDrawerStore } from "../Stores";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { SunIcon, MoonIcon, ExternalLinkIcon } from "@chakra-ui/icons";
 import { version } from "../../package.json";
 import { useShallow } from "zustand/shallow";
@@ -52,40 +51,28 @@ export const MenuDrawer = () => {
               flexDirection: "column",
             }}
           >
-            <Link as={NavLink} to={"/"}>
-              Home
-            </Link>
-            <Link as={NavLink} to={"/tools/display-calculator"}>
+            <NavLink to={"/"}>Home</NavLink>
+            <NavLink to={"/tools/display-calculator"}>
               Display Calculator
-            </Link>
-            <Link as={NavLink} to={"/tools/sort-lines"}>
-              Sort Lines
-            </Link>
-            <Link as={NavLink} to={"/tools/date"}>
-              Date Tools
-            </Link>
-            <Link as={NavLink} to={"/tools/circular-area"}>
-              Circular Area
-            </Link>
-            <Link as={NavLink} to={"/tools/raid-calculator"}>
-              RAID Calculator
-            </Link>
-            <Link as={NavLink} to={"/tools/optical-media-speed-calculator"}>
+            </NavLink>
+            <NavLink to={"/tools/sort-lines"}>Sort Lines</NavLink>
+            <NavLink to={"/tools/date"}>Date Tools</NavLink>
+            <NavLink to={"/tools/circular-area"}>Circular Area</NavLink>
+            <NavLink to={"/tools/raid-calculator"}>RAID Calculator</NavLink>
+            <NavLink to={"/tools/optical-media-speed-calculator"}>
               Optical Media Speed Calculator
-            </Link>
-            <Link as={NavLink} to={"/tools/ram-bandwidth"}>
-              RAM Bandwidth
-            </Link>
+            </NavLink>
+            <NavLink to={"/tools/ram-bandwidth"}>RAM Bandwidth</NavLink>
           </div>
           <div style={{ flexDirection: "column" }}>
-            <Link href={"https://github.com/Bikossor/poly.tools"} isExternal>
+            <Link to={"https://github.com/Bikossor/poly.tools"} target="_blank">
               GitHub Repo <ExternalLinkIcon mx="2px" />
             </Link>
             <Link
-              href={
+              to={
                 "https://github.com/Bikossor/poly.tools/blob/main/CHANGELOG.md"
               }
-              isExternal
+              target="_blank"
             >
               Changelog <ExternalLinkIcon mx="2px" />
             </Link>
