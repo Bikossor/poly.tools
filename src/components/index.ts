@@ -11,5 +11,6 @@ export { MenuDrawer } from "./MenuDrawer";
 export { ReloadPrompt } from "./ReloadPrompt";
 export { Select } from "./Select";
 export { Text } from "./Text";
+export { Textarea } from "./Textarea";
 export { UnorderedList } from "./UnorderedList";
 export { VStack } from "./VStack";
