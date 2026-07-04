@@ -1,6 +1,7 @@
 export { Button } from "./Button";
 export { Code } from "./Code";
 export { Container } from "./Container";
+export { FormLabel } from "./FormLabel";
 export { Heading } from "./Heading";
 export { HStack } from "./HStack";
 export { Layout } from "./Layout";
