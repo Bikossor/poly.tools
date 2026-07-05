@@ -1,4 +1,3 @@
-import { useClipboard } from "@chakra-ui/react";
 import { CheckIcon, CopyIcon } from "@chakra-ui/icons";
 import { ChangeEvent, useEffect, useState } from "react";
 import {
@@ -10,6 +9,7 @@ import {
   Input,
   InputRightAddon,
 } from "@components";
+import { useClipboard } from "../../useClipboard";
 
 const calcCircularArea = (diameter: number) => {
   return (Math.PI * diameter ** 2) / 4;

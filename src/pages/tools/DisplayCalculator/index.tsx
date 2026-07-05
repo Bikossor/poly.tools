@@ -1,5 +1,4 @@
 import { CheckIcon, CopyIcon } from "@chakra-ui/icons";
-import { useClipboard } from "@chakra-ui/react";
 import { useEffect, useReducer, useState } from "react";
 import { resolutionPresets } from "./presets";
 import { CompareListItem, DisplayCalculatorState } from "./types";
@@ -13,6 +12,7 @@ import {
   Text,
   VStack,
 } from "@components";
+import { useClipboard } from "../../../useClipboard";
 
 const initialState: DisplayCalculatorState = {
   horizontalResolution: 1920,

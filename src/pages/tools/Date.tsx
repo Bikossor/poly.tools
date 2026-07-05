@@ -1,5 +1,4 @@
 import { CheckIcon, CopyIcon } from "@chakra-ui/icons";
-import { useClipboard } from "@chakra-ui/react";
 import {
   Button,
   Heading,
@@ -8,6 +7,7 @@ import {
   InputLeftAddon,
   InputRightAddon,
 } from "@components";
+import { useClipboard } from "../../useClipboard";
 
 const getWeekNumber = (date: Date): number => {
   const d = new Date(
